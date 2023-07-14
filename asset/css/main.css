@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  color: #656774;
+}
+
+main {
+  background-image: url(../img/background-dien-thoai-3d_011207832.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+main .col-6 {
+  justify-content: center;
+  margin-top: 100px;
+}
+main .col-6 .wrapper {
+  width: 280px;
+  text-align: center;
+  display: inline-block;
+  margin: 0 150px;
+  color: #fff;
+  background-color: rgb;
+  padding: 70px 30px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+main .col-6 .wrapper:hover {
+  color: black;
+  background-color: rgba(255, 255, 255, 0.39);
+}
+main .col-6 .wrapper .icon {
+  font-size: 70px;
+  margin-bottom: 30px;
+}/*# sourceMappingURL=main.css.map */

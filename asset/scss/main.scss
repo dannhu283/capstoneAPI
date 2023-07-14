@@ -1,0 +1,9 @@
+//helper
+@import "./helpers/variable";
+@import "./helpers/mixin";
+
+//base
+@import "./base/reset.scss";
+
+//layouts
+@import "./layouts/cover";

@@ -1,0 +1,26 @@
+$color-dark-1: #656774;
+$color-white-1: #f5f9fe;
+$color-white-2: #e2ebfc;
+$color-white-3: #fff;
+$color-black-1:black;
+
+
+//định nghĩa các biến cỡ chữ$fs-1: 14px;
+$fs-1: 1.1rem;
+$fs-2: 20px;
+$fs-3: 44px;
+$fs-4: 70px;
+
+//định nghĩa độ đậm của chữ
+$fw-1:400;
+$fw-2:600;
+$fw-3:700;
+
+// ddinhj nghĩa breakpoint
+$breakpoints:(
+    "small":576px,
+    "medium":768px,
+    "large":992px,
+    "extra-large":1200px
+)
+
