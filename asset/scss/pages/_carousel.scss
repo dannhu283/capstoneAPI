@@ -1,0 +1,13 @@
+
+.search{
+    display: flex;
+    justify-content: space-between;
+    margin:50px 0;
+    select{
+        font-size: $fs-2;
+        font-weight: $fw-3;
+        padding: 5px;
+        border-radius: 8px;
+        @include styleColor($color-white-3,$color-green-1)
+    }
+}

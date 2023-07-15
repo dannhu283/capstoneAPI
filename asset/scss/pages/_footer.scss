@@ -1,0 +1,40 @@
+.footer{
+    background-color: $color-blue-1;
+    .contact{
+        @include colums(grid,repeat(3,1.5fr));
+        &__item{
+            text-align: start;
+            margin-top: 30px;
+            color: $color-white-1;
+            h2{
+                font-weight: $fw-3;
+                color: $color-green-1;
+            }
+            p{
+                padding: 0 50px 0 50px;
+            }
+            ul{
+                list-style: none;
+                li{
+                    margin: 10px;
+                }
+                a{
+                    text-decoration: none;
+                    font-size: $fs-2;
+                    color:$color-white-1 ;
+                    &:hover{
+                        color: $color-green-1;
+                        transition: all .5s;
+                    }
+                }
+            }
+        }
+    }
+    .copyright{
+        @include styleColor($color-green-1,$color-white-2);
+        text-align: center;
+
+        padding: 10px 0;
+    }
+    
+}

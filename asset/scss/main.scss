@@ -1,9 +1,20 @@
 //helper
 @import "./helpers/variable";
 @import "./helpers/mixin";
+@import "./helpers/extend";
 
 //base
 @import "./base/reset.scss";
 
+//components
+@import "./components/button";
+
 //layouts
-@import "./layouts/cover";
+@import "./layouts/indexpage";
+
+//pages
+@import "./pages/carousel";
+@import "./pages/user-header";
+@import "./pages/userProduct";
+@import "./pages/footer"
+

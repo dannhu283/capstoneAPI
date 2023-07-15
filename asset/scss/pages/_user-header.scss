@@ -1,0 +1,19 @@
+
+.header{
+    @include styleColor($color-green-1,$color-blue-1);
+    .nav{
+        @include colums(grid,repeat(3,1fr));
+        h2{
+            padding-top: 50px;
+        }
+        }
+        button{
+            position: relative;
+            .quantity{
+                position: absolute;
+                top: -15px;
+                right: 20px;
+            }
+        }
+    }
+
