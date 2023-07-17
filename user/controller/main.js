@@ -63,14 +63,14 @@ function displayProduct(products) {
   }, "");
   document.getElementById("listProduct").innerHTML = html;
 }
-// //add to card
-// cart = [];
-// let count = 0;
-// const AddToCart = [];
-// function AddToCard(productName) {
-//   count++;
-//   document.getElementById("quantity").innerHTML = count;
-// }
+//add to card
+cart = [];
+let count = 0;
+const AddToCart = [];
+function AddToCard(productName) {
+  count++;
+  document.getElementById("quantity").innerHTML = count;
+}
 
 // //find product
 // function findProduct() {
