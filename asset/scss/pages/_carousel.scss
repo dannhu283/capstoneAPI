@@ -1,13 +1,18 @@
 
-.search{
-    display: flex;
-    justify-content: space-between;
-    margin:50px 0;
-    select{
-        font-size: $fs-2;
-        font-weight: $fw-3;
-        padding: 5px;
-        border-radius: 8px;
-        @include styleColor($color-white-3,$color-green-1)
+.user-second{
+    background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+    @extend .bg-img;
+    .search{
+        display: flex;
+        justify-content: space-between;
+        padding:50px 0;
+        select{
+            font-size: $fs-2;
+            font-weight: $fw-3;
+            padding: 5px;
+            border-radius: 8px;
+            @include styleColor($color-white-3,$color-green-1)
+        }
     }
 }
+

@@ -1,8 +1,10 @@
+
 .row{
     .col-4{
         .card{
             background-image: url(../img/images.jpg);
            @extend .bg-img;
+           border-radius: 15px;
 
         }
         margin-bottom: 20px;
@@ -40,7 +42,7 @@
             transform: translateY(0px);
         }
         &:hover .btn-add{
-            transform: translate(250px,50px)
+            transform: translate(200px,50px)
         }
         ul{
             list-style: none;
@@ -57,7 +59,7 @@
             }
         }
         .btn-add{
-            transform: translateX(100px);
+            transform: translateX(50px);
             transition: all 0.8s;
         }
        

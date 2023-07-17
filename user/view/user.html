@@ -64,20 +64,20 @@
               data-bs-target="#myModal"
             >
               <span class="text">🛒</span>
-              <h3 class="quantity">0</h3>
+              <h3 class="quantity" id="quantity">0</h3>
             </button>
           </div>
         </div>
       </div>
     </header>
-    <main>
+    <main class="user-second">
       <div class="container user">
         <div class="carousel">
           <div class="search">
             <a href="../../index.html">
               <button class="button-37" role="button">Quay Lại</button>
             </a>
-            <select name="" id="">
+            <select name="" id="find" onclick="findProduct()">
               <option value="">Tìm Kiếm Sản Phẩm</option>
               <option value="all">TẤT CẢ SẢN PHẨM</option>
               <option value="iphone">IPHONE</option>
@@ -192,6 +192,17 @@
         <div class="modal-content">
           <header class="head-form mb-0">
             <h2 id="header-title">Giỏ Hàng</h2>
+            <h3 id="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
+            <br />
+            <div class="display-product d-none" id="hidden">
+              <tr id="product-modal">
+                <td id="stt">stt</td>
+                <td id="nameProduct">Sản phẩm</td>
+                <td id="image">Hình ảnh</td>
+                <td id="price">Giá</td>
+              </tr>
+            </div>
+            <div class="total"></div>
           </header>
 
           <!-- Modal Header -->

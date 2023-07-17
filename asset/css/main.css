@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.bg-img, .row .col-4 .card, .main {
+.bg-img, .row .col-4 .card, .user-second, .main {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -127,12 +127,15 @@ html {
   margin-bottom: 30px;
 }
 
-.search {
+.user-second {
+  background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+}
+.user-second .search {
   display: flex;
   justify-content: space-between;
-  margin: 50px 0;
+  padding: 50px 0;
 }
-.search select {
+.user-second .search select {
   font-size: 20px;
   font-weight: 700;
   padding: 5px;
@@ -159,6 +162,8 @@ html {
   position: absolute;
   top: -15px;
   right: 20px;
+  color: #13aa52;
+  font-weight: 700;
 }
 
 .row .col-4 {
@@ -167,6 +172,7 @@ html {
 }
 .row .col-4 .card {
   background-image: url(../img/images.jpg);
+  border-radius: 15px;
 }
 .row .col-4 .imgtheme {
   text-align: center;
@@ -204,7 +210,7 @@ html {
   transform: translateY(0px);
 }
 .row .over_lay:hover .btn-add {
-  transform: translate(250px, 50px);
+  transform: translate(200px, 50px);
 }
 .row .over_lay ul {
   list-style: none;
@@ -221,7 +227,7 @@ html {
   font-weight: 700;
 }
 .row .over_lay .btn-add {
-  transform: translateX(100px);
+  transform: translateX(50px);
   transition: all 0.8s;
 }
 
@@ -264,4 +270,23 @@ html {
   background-color: #e2ebfc;
   text-align: center;
   padding: 10px 0;
+}
+
+.modal-dialog {
+  width: 80%;
+  color: #13aa52;
+  background-color: #e2ebfc;
+  border-radius: 10px;
+  border: 3px dashed #13aa52;
+  text-align: center;
+}
+.modal-dialog h2 {
+  font-size: 44px;
+  background-color: #0a0042;
+  padding: 10px 0;
+}
+.modal-dialog h3 {
+  padding: 100px 0;
+  color: #d70018;
+  font-weight: 700;
 }/*# sourceMappingURL=main.css.map */

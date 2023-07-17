@@ -1,0 +1,17 @@
+.modal-dialog{
+    width: 80%;
+    @include styleColor($color-green-1,$color-white-2);
+    border-radius: 10px;
+    border: 3px dashed $color-green-1;
+    text-align: center;
+    h2{
+        font-size: $fs-3;
+        background-color: $color-blue-1;
+        padding: 10px 0;
+    }
+    h3{
+        padding: 100px 0;
+        color: $color-red-1;
+        font-weight: $fw-3;
+    }
+}
