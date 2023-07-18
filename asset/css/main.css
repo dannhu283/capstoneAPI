@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.bg-img, .row .col-4 .card, .user-second, .main {
+.bg-img, .row .col-3 .card, .user-second, .main {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -107,7 +107,7 @@ html {
   margin-top: 100px;
 }
 .main .col-6 .wrapper {
-  width: 280px;
+  width: 250px;
   text-align: center;
   display: inline-block;
   margin: 0 150px;
@@ -129,19 +129,25 @@ html {
 
 .user-second {
   background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+  padding-bottom: 50px;
 }
 .user-second .search {
   display: flex;
   justify-content: space-between;
   padding: 50px 0;
 }
-.user-second .search select {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 5px;
-  border-radius: 8px;
-  color: #fff;
-  background-color: #13aa52;
+.user-second .search .input-group {
+  width: 30%;
+}
+.user-second .search .input-group #basic-addon2 {
+  font-size: 25px;
+  cursor: pointer;
+}
+.user-second .search .input-group #basic-addon2:hover {
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.user-second .search .input-group:hover {
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
 .header {
@@ -166,26 +172,26 @@ html {
   font-weight: 700;
 }
 
-.row .col-4 {
+.row .col-3 {
   margin-bottom: 20px;
   position: relative;
 }
-.row .col-4 .card {
+.row .col-3 .card {
   background-image: url(../img/images.jpg);
   border-radius: 15px;
 }
-.row .col-4 .imgtheme {
+.row .col-3 .imgtheme {
   text-align: center;
 }
-.row .col-4 .imgtheme img {
+.row .col-3 .imgtheme img {
   margin: 30px;
   width: 60%;
 }
-.row .col-4 .imgtheme h3 {
+.row .col-3 .imgtheme h3 {
   color: #1c83ac;
   margin: 10px;
 }
-.row .col-4 .imgtheme p {
+.row .col-3 .imgtheme p {
   color: #d70018;
   font-weight: 700;
   font-size: 20px;

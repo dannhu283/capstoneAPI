@@ -1,4 +1,5 @@
 getProducts();
+
 /****   Utils  ****/
 function getElement(selector) {
   return document.querySelector(selector);

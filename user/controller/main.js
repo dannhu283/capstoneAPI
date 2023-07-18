@@ -1,4 +1,13 @@
 getProducts();
+
+/****   Utils  ****/
+function getElement(selector) {
+  return document.querySelector(selector);
+}
+
+function getElements(selector) {
+  return document.querySelectorAll(selector);
+}
 // Hàm gọi API xuất ra màn hình
 function getProducts() {
   apiGetProducts()
@@ -28,7 +37,7 @@ function displayProduct(products) {
     return (
       result +
       `
-    <div class="col-4" >
+    <div class="col-3" >
       <div class="card">
         <div class="imgtheme">
           <img src="${product.img}"/>
@@ -63,6 +72,7 @@ function displayProduct(products) {
   }, "");
   document.getElementById("listProduct").innerHTML = html;
 }
+
 //add to card
 cart = [];
 let count = 0;
@@ -72,26 +82,28 @@ function AddToCard(productName) {
   document.getElementById("quantity").innerHTML = count;
 }
 
-// //find product
-// function findProduct() {
-//   let search = document.getElementById("find").value;
-//   search = search.trim().toLowerCase();
-//   //filter product match
-//   let newProducts = products.filter((value) => {
-//     let result = value.type.trim().toLowerCase();
-//     return result.includes(search);
-//   });
-//   //display result
-//   if (search === "all") {
-//     return displayProduct(products);
-//   }
-//   if (newProducts.length > 0) {
-//     displayProduct(newProducts);
-//   } else {
-//     document.getElementById(
-//       "listProduct"
-//     ).innerHTML = `📣📣📣 Không có loại sản phẩm này`;
-//     document.getElementById("listProduct").style.fontSize = "30px";
-//     document.getElementById("listProduct").style.color = "white";
-//   }
-// }
+// Hàm tìm kiếm sản phẩm
+
+getElement("#txtSearch").onkeypress = (event) => {
+  if (event.key !== "Enter") {
+    return;
+  }
+  apiGetProducts(event.target.value)
+    .then((response) => {
+      displayProduct(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+getElement("#basic-addon2").onclick = () => {
+  let search = getElement("#txtSearch").value;
+  apiGetProducts(search)
+    .then((response) => {
+      displayProduct(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
