@@ -216,25 +216,26 @@ html {
   transform: translateY(0px);
 }
 .row .over_lay:hover .btn-add {
-  transform: translate(200px, 50px);
+  transform: translate(-10px, -20px);
 }
 .row .over_lay ul {
   list-style: none;
   margin-top: 50px;
-  font-size: 20px;
+  font-size: 18px;
   transform: translateY(100px);
   transition: all 0.8s;
   overflow: hidden;
 }
 .row .over_lay ul h3 {
   text-align: center;
-  margin-bottom: 30px;
   color: #13aa52;
   font-weight: 700;
 }
 .row .over_lay .btn-add {
-  transform: translateX(50px);
   transition: all 0.8s;
+  position: absolute;
+  right: 0;
+  bottom: 0px;
 }
 
 .footer {
