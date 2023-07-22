@@ -405,3 +405,20 @@ function validateType() {
   }
   return type;
 }
+// Biến lưu trạng thái sắp xếp (mặc định là không sắp xếp)
+let sortAscending = false;
+// Hàm sắp xếp theo giá tiền
+getElement("#sapXepGia").onclick = () => {
+  apiGetProducts()
+    .then((response) => {
+      sortAscending = !sortAscending;
+      let product = response.data;
+      product.sort((a, b) => {
+        return sortAscending ? a.price - b.price : b.price - a.price;
+      });
+      display(product);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
