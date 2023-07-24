@@ -280,12 +280,18 @@ html {
 }
 
 .modal-dialog {
-  width: 80%;
+  width: 120%;
   color: #13aa52;
   background-color: #e2ebfc;
   border-radius: 10px;
-  border: 3px dashed #13aa52;
+  border: 3px solid #13aa52;
   text-align: center;
+}
+.modal-dialog .money {
+  text-align: right;
+  margin-right: 20px;
+  color: #d70018;
+  font-weight: 700;
 }
 .modal-dialog h2 {
   font-size: 44px;
@@ -296,4 +302,39 @@ html {
   padding: 100px 0;
   color: #d70018;
   font-weight: 700;
+}
+.modal-dialog .listCard li {
+  display: grid;
+  grid-template-columns: repeat(4, 1.5fr);
+  align-items: center;
+  justify-content: space-around;
+  border: 2px;
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+.modal-dialog .listCard li::after {
+  content: "";
+  width: 370%;
+  height: 3px;
+  border-radius: 3px;
+  border: 2px dashed #13aa52;
+  margin-top: 20px;
+}
+.modal-dialog .listCard li .nameProduct {
+  color: #13aa52;
+  font-weight: 700;
+}
+.modal-dialog .listCard li .priceProduct {
+  color: #d70018;
+  font-weight: 700;
+}
+.modal-dialog .listCard li .input {
+  display: flex;
+}
+.modal-dialog .listCard li .input button {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  line-height: 20px;
+  margin: 0 8px;
 }/*# sourceMappingURL=main.css.map */

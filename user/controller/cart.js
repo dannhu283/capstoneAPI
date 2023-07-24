@@ -33,7 +33,7 @@ function displayProduct(products) {
     let product = new Product(
       value.id,
       value.name,
-      +value.price,
+      value.price,
       value.screen,
       value.backCamera,
       value.frontCamera,
@@ -90,7 +90,7 @@ let listCards = [];
 function addToCard(index) {
   if (listCards[index] == null) {
     // copy product form list to list card
-    listCards[index] = productsOb[index];
+    listCards[index] = JSON.parse(JSON.stringify(productsOb[index]));
     listCards[index].quantity = 1;
   }
   reloadCard();
@@ -106,10 +106,10 @@ function reloadCard() {
     if (value != null) {
       let newDiv = document.createElement("li");
       newDiv.innerHTML = `
-                  <div><img width="30%" src="${value.img}"/></div>
-                  <div>${value.name}</div>
-                  <div>${value.price.toLocaleString()}</div>
-                  <div>
+                  <div><img width="70%" src="${value.img}"/></div>
+                  <div class="nameProduct">${value.name}</div>
+                  <div class="priceProduct">${value.price}</div>
+                  <div class="input">
                       <button onclick="changeQuantity(${index}, ${
         value.quantity - 1
       })">-</button>

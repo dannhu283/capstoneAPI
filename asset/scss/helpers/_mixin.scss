@@ -14,3 +14,7 @@
     display: $display;
     grid-template-columns: $grColum;
 }
+@mixin colorWeight($color,$weight){
+    color: $color;
+    font-weight: $weight;
+}
