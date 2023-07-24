@@ -45,7 +45,7 @@
     <link rel="stylesheet" href="../../asset/css/main.css" />
   </head>
 
-  <body>
+  <body class="">
     <header class="header">
       <div class="container">
         <div class="nav">
@@ -58,7 +58,7 @@
           <h2>Sản phẩm CyberPhone</h2>
           <div class="buton displayTheme">
             <button
-              class="button-64"
+              class="button-64 shoppingfcloseShopping"
               role="button"
               data-bs-toggle="modal"
               data-bs-target="#myModal"
@@ -96,7 +96,7 @@
         </div>
 
         <!-- sản phẩm  -->
-        <div class="row" id="listProduct">
+        <div class="row list" id="listProduct">
           <!-- <div class="col-4">
             <div class="card p-5 bg-danger">
               <div class="imgtheme">
@@ -199,9 +199,9 @@
         <div class="modal-content">
           <header class="head-form mb-0">
             <h2 id="header-title">Giỏ Hàng</h2>
-            <h3 id="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
-            <br />
-            <table class="listProduct"></table>
+            <!-- <h3 id="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3> -->
+            <ul class="listCard"></ul>
+            <div>Tổng tiền : <span class="total">0</span></div>
           </header>
 
           <!-- Modal Header -->
@@ -223,7 +223,7 @@
               type="button"
               class="btn btn-danger"
               data-bs-target="#myModal"
-              class="btn-close"
+              class="btn-close closeShopping"
               data-bs-dismiss="modal"
               aria-label="Close"
             >
@@ -249,6 +249,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="../../admin/services/productAPI.js"></script>
     <script src="../../admin/model/products.js"></script>
+    <script src="../controller/cart.js"></script>
     <script src="../../user/controller/main.js"></script>
   </body>
 </html>
