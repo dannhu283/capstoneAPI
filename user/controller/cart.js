@@ -6,19 +6,20 @@ function getElement(selector) {
 function getElements(selector) {
   return document.querySelectorAll(selector);
 }
+//DOM
+let openShopping = getElement(".shopping");
+let closeShopping = getElement(".closeShopping");
+let list = getElement(".list");
+let listCard = getElement(".listCard");
+let body = getElement("body");
+let total = getElement(".total");
+let quantity = getElement(".quantity");
 
-let openShopping = document.querySelector(".shopping");
-let closeShopping = document.querySelector(".closeShopping");
-let list = document.querySelector(".list");
-let listCard = document.querySelector(".listCard");
-let body = document.querySelector("body");
-let total = document.querySelector(".total");
-let quantity = document.querySelector(".quantity");
-
+//call API
 function getProducts() {
   apiGetProducts()
     .then((response) => {
-      // hiện sản phẩm ra giao diện
+      // display product
       displayProduct(response.data);
     })
     .catch((error) => {
@@ -28,6 +29,7 @@ function getProducts() {
 
 getProducts();
 
+// function display products on screen
 function displayProduct(products) {
   let html = products.reduce((result, value, index) => {
     let product = new Product(
@@ -41,6 +43,8 @@ function displayProduct(products) {
       value.desc,
       value.type
     );
+
+    //change Json save on localStorange
     let productsJson = JSON.stringify(products);
     localStorage.setItem("productsJson", productsJson);
 
@@ -63,7 +67,7 @@ function displayProduct(products) {
           <h3>Dòng máy :${product.type} </h3>
           <li>Camera trước : ${product.frontCamera}</li>
           <li>Camera sau : ${product.backCamera}</li>
-          <li>${value.desc}</li>
+          <li>${product.desc}</li>
         </ul>
       </div>
       <div class="btn-add">
@@ -83,6 +87,7 @@ function displayProduct(products) {
   document.getElementById("listProduct").innerHTML = html;
 }
 
+//change back object
 let productStorangeJson = localStorage.getItem("productsJson");
 let productsOb = JSON.parse(productStorangeJson);
 
@@ -96,6 +101,7 @@ function addToCard(index) {
   reloadCard();
 }
 
+//reload product in cart
 function reloadCard() {
   listCard.innerHTML = "";
   let count = 0;
@@ -104,6 +110,7 @@ function reloadCard() {
     totalPrice = totalPrice + value.price;
     count = count + value.quantity;
     if (value != null) {
+      //creat new div display products in cart
       let newDiv = document.createElement("li");
       newDiv.innerHTML = `
                   <div><img width="70%" src="${value.img}"/></div>
@@ -125,6 +132,7 @@ function reloadCard() {
   quantity.innerText = count;
 }
 
+//function change quantity if user click add to cart
 function changeQuantity(index, quantity) {
   if (quantity == 0) {
     delete listCards[index];

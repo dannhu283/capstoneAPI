@@ -1,4 +1,4 @@
 NHÓM 18: phone
-NGÔ TUẤN KIỆT
+NGÔ TUẤN KIỆT:--làm trang admin
 
-TRẦN THỊ ĐAN NHƯ
+TRẦN THỊ ĐAN NHƯ:--làm trang user và trang chủ
