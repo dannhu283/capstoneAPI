@@ -80,7 +80,7 @@ function displayProduct(products) {
         `
     );
   }, "");
-  document.getElementById("listProduct").innerHTML = html;
+  getElement(".list").innerHTML = html;
 }
 
 //change back object
@@ -96,7 +96,6 @@ function addToCard(index) {
   }
   reloadCard();
 }
-
 //reload product in cart
 function reloadCard() {
   listCard.innerHTML = "";
@@ -143,6 +142,7 @@ function changeQuantity(index, quantity) {
 //function pay
 function pay() {
   listCard.innerHTML = "";
+  listCards = [];
   quantity.innerHTML = "";
   total.innerHTML = 0;
   getElement(".notice").style = "display:block";
