@@ -7,14 +7,11 @@ function getElements(selector) {
   return document.querySelectorAll(selector);
 }
 //DOM
-let openShopping = getElement(".shopping");
-let closeShopping = getElement(".closeShopping");
 let list = getElement(".list");
 let listCard = getElement(".listCard");
 let body = getElement("body");
 let total = getElement(".total");
 let quantity = getElement(".quantity");
-
 //call API
 function getProducts() {
   apiGetProducts()
@@ -51,14 +48,13 @@ function displayProduct(products) {
     return (
       result +
       `
-    <div class="col-3" >
+    <div class="main_col col-3" >
       <div class="card">
         <div class="imgtheme">
           <img src="${product.img}"/>
           <h3>${product.name}</h3>
           <p> ${product.price}</p>
         </div>
-       
         
       </div>
       <div class="over_lay">
@@ -107,9 +103,10 @@ function reloadCard() {
   let count = 0;
   let totalPrice = 0;
   listCards.forEach((value, index) => {
-    totalPrice = totalPrice + value.price;
+    totalPrice = totalPrice + value.price * 1;
     count = count + value.quantity;
     if (value != null) {
+      getElement(".notice").style = "display:none";
       //creat new div display products in cart
       let newDiv = document.createElement("li");
       newDiv.innerHTML = `
@@ -141,4 +138,13 @@ function changeQuantity(index, quantity) {
     listCards[index].price = quantity * productsOb[index].price;
   }
   reloadCard();
+}
+
+//function pay
+function pay() {
+  listCard.innerHTML = "";
+  quantity.innerHTML = "";
+  total.innerHTML = 0;
+  getElement(".notice").style = "display:block";
+  alert("Cám ơn bạn đã mua hàng");
 }

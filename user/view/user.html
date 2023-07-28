@@ -58,13 +58,13 @@
           <h2>Sản phẩm CyberPhone</h2>
           <div class="buton displayTheme">
             <button
-              class="button-64 shoppingfcloseShopping"
+              class="button-64 shopping closeShopping"
               role="button"
               data-bs-toggle="modal"
               data-bs-target="#myModal"
             >
               <span class="text">🛒</span>
-              <h3 class="quantity" id="quantity">0</h3>
+              <h3 class="quantity" id="quantity"></h3>
             </button>
           </div>
         </div>
@@ -199,7 +199,7 @@
         <div class="modal-content">
           <header class="head-form mb-0">
             <h2 id="header-title">Giỏ Hàng</h2>
-            <!-- <h3 id="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3> -->
+            <h3 class="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
             <ul class="listCard"></ul>
             <div class="money">Tổng tiền : <span class="total">0</span></div>
           </header>
@@ -215,7 +215,16 @@
 
           <!-- Modal footer -->
           <div class="modal-footer" id="modal-footer">
-            <button id="btnCapNhat" type="button" class="btn btn-success">
+            <button
+              id="btnCapNhat"
+              type="button"
+              class="btn btn-success"
+              data-bs-target="#myModal"
+              class="btn-close closeShopping"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              onclick="pay()"
+            >
               Thanh toán
             </button>
             <button
