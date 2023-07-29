@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.bg-img, .row .main_col .card, .user-second, .main {
+.bg-img, .row .main_col .card, .user-second, body {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -94,37 +94,87 @@ html {
   transform: translateY(-2px);
 }
 
-.main {
+body {
   background-image: url(../img/background-dien-thoai-3d_011207832.jpg);
   height: 100vh;
 }
-.main h1 {
+@media screen and (max-width: 768px) {
+  body {
+    height: 120vh;
+  }
+}
+@media screen and (max-width: 576px) {
+  body {
+    height: 125vh;
+  }
+}
+body h1 {
   padding-top: 100px;
   font-size: 70px;
 }
-.main .col-6 {
-  justify-content: center;
-  margin-top: 100px;
+@media screen and (max-width: 992px) {
+  body h1 {
+    font-size: 50px;
+  }
 }
-.main .col-6 .wrapper {
-  width: 250px;
+@media screen and (max-width: 768px) {
+  body h1 {
+    padding-left: 10%;
+  }
+}
+body .col-6 {
+  justify-content: center;
+  margin-top: 10%;
+}
+body .col-6 .wrapper {
+  width: 40%;
   text-align: center;
   display: inline-block;
   margin: 0 150px;
   color: #fff;
   background-color: rgb;
-  padding: 70px 30px;
+  padding: 20px;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.5s;
 }
-.main .col-6 .wrapper:hover {
+body .col-6 .wrapper:hover {
   color: black;
   background-color: rgba(255, 255, 255, 0.39);
 }
-.main .col-6 .wrapper .icon {
+body .col-6 .wrapper .icon {
   font-size: 70px;
   margin-bottom: 30px;
+}
+@media screen and (max-width: 992px) {
+  body .col-6 .wrapper .icon {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .col-6 .wrapper .icon {
+    font-size: 44px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .col-6 .wrapper .icon {
+    padding: 0 20px;
+  }
+}
+body .col-6 .wrapper h3 {
+  font-size: 44px;
+  color: #13aa52;
+  font-weight: 600;
+}
+@media screen and (max-width: 992px) {
+  body .col-6 .wrapper h3 {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .col-6 .wrapper {
+    margin: 0 100px;
+  }
 }
 
 .user-second {
@@ -194,7 +244,7 @@ html {
 .row .main_col .imgtheme p {
   color: #d70018;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 30px;
 }
 .row .over_lay {
   position: absolute;
@@ -265,7 +315,7 @@ html {
 }
 .footer .contact__item ul a {
   text-decoration: none;
-  font-size: 20px;
+  font-size: 30px;
   color: #f5f9fe;
 }
 .footer .contact__item ul a:hover {

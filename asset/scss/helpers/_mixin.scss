@@ -23,7 +23,7 @@
     @if(map-has-key($map:$breakpoints , $key:$screen )){
         //lấy ra giá trị của screen trong mảng breakpoints
         $width:map-get($map:$breakpoints , $key:$screen );
-        @media screen and (min-width: $width){
+        @media screen and (max-width: $width){
             @content;
         } 
     }@else{
