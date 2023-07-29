@@ -3,8 +3,33 @@
     @include styleColor($color-green-1,$color-blue-1);
     .nav{
         @include colums(grid,repeat(3,1fr));
+        img{
+            @include reponsive("large"){
+              width: 60%;  
+            }
+            @include reponsive("medium"){
+                  width: 80%;  
+            }
+            @include reponsive("small"){
+                    width: 80%;
+                    padding-top: 10px;
+            }
+        }
         h2{
-            padding-top: 50px;
+            padding-top: 40px;
+            font-size: $fs-6;
+            @include reponsive("large"){
+                padding-top: 30px;
+                font-size: 22px;
+            }
+            @include reponsive("medium"){
+                 text-align: center;   
+                 padding-top: 25px;
+                 font-size: 30px;
+            }
+            @include reponsive("small"){
+                font-size: 25px;
+            }
         }
         }
         button{

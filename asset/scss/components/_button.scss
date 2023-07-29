@@ -27,12 +27,15 @@
     }
     span {
         background-color: #0a0042;
-        padding: 16px 24px;
+        padding: 20px 24px;
         border-radius: 6px;
         width: 100%;
         height: 100%;
         transition: 300ms;
         font-size: $fs-3;
+        @include reponsive("large"){
+          font-size: $fs-6;     
+        }
       }
   }
   .button-64:hover span {

@@ -12,10 +12,12 @@ body{
         padding-top: 100px;
         font-size: $fs-4;
         @include reponsive("large"){
-            font-size: $fs-5;
+            font-size: 60px;
+            padding-left: 20%;
         }
         @include reponsive("medium"){
             padding-left: 10%;
+            margin-bottom: 20%;
         }
     }
     .col-6{
@@ -39,9 +41,7 @@ body{
                 margin-bottom: 30px;
                 @include reponsive("large"){
                     font-size: $fs-5;
-                }
-                @include reponsive("medium"){
-                    font-size: $fs-3;
+                    padding:0 15px ;
                 }
                 @include reponsive("small"){
                     padding:0 20px ;
@@ -54,6 +54,9 @@ body{
                 @include reponsive("large"){
                     font-size: $fs-2;
                 }
+            }
+            @include reponsive("medium"){
+               margin: 0 80px;
             }
             @include reponsive("small"){
                 margin: 0 100px;

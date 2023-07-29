@@ -48,7 +48,7 @@ function displayProduct(products) {
     return (
       result +
       `
-    <div class="main_col col-3" >
+    <div class="main_col col-lg-3 col-md-4 col-sm-6" >
       <div class="card">
         <div class="imgtheme">
           <img src="${product.img}"/>
@@ -60,7 +60,7 @@ function displayProduct(products) {
       <div class="over_lay">
       <div class="over_infor">
         <ul>
-          <h3>Dòng máy :${product.type} </h3>
+          <h3>Dòng máy ${product.type} </h3>
           <li>Camera trước : ${product.frontCamera}</li>
           <li>Camera sau : ${product.backCamera}</li>
           <li>${product.desc}</li>

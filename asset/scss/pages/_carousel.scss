@@ -3,6 +3,9 @@
     background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
     @extend .bg-img;
     padding-bottom: 50px;
+    @include reponsive("small"){
+        opacity: 10;
+    }
     .search{
         display: flex;
         justify-content: space-between;
@@ -20,6 +23,76 @@
                 box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
             }
         }
+        
+    } 
+    .row{
+        .main_col{
+            .card{
+                background-image: url(../img/images.jpg);
+               @extend .bg-img;
+               height: 100%;
+               border-radius: 15px;
+    
+            }
+            margin-bottom: 20px;
+            position: relative;
+            
+            .imgtheme{
+                text-align: center;
+                img{
+                    margin: 30px;
+                    width: 60%;
+                }
+                h3{
+                    color: $color-blue-2;
+                    margin: 10px;
+                }
+                p{
+                    color: $color-red-1;
+                    font-weight: $fw-3;
+                    font-size: $fs-2;
+                }
+            }
+        }
+
+        .over_lay{
+            position: absolute;
+            @include direction(0,0,0,0);
+            @include styleColor($color-white-2,rgba(0, 0, 0, 0.781));
+            border-radius: 15px;
+            margin:0 10px;
+            opacity: 0;
+            transition: all 0.5s;
+            &:hover{
+            opacity: 1;
+            }
+            &:hover ul{
+                transform: translateY(0px);
+            }
+            &:hover .btn-add{
+                transform: translate(-10px,-20px)
+            }
+            ul{
+                list-style: none;
+                margin-top: 50px;
+                font-size: 18px;
+                transform: translateY(100px);
+                transition: all .8s;
+                overflow: hidden;
+                h3{
+                    text-align: left;
+                    color: $color-green-1;
+                    font-weight: $fw-3;
+                }
+            }
+            .btn-add{
+                transition: all 0.8s;
+                position: absolute;
+                right: 0;
+                bottom: 0px;
+            }
+        }
     }
+
 }
 
