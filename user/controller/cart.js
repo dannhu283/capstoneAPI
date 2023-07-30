@@ -12,6 +12,7 @@ let listCard = getElement(".listCard");
 let body = getElement("body");
 let total = getElement(".total");
 let quantity = getElement(".quantity");
+
 //call API
 function getProducts() {
   apiGetProducts()
@@ -68,6 +69,7 @@ function displayProduct(products) {
       </div>
       <div class="btn-add">
         <button 
+        id="statusButton"
         class="button-37" 
         role="button"
         onclick="addToCard(${index})">
@@ -80,7 +82,7 @@ function displayProduct(products) {
         `
     );
   }, "");
-  getElement(".list").innerHTML = html;
+  list.innerHTML = html;
 }
 
 //change back object
@@ -141,10 +143,11 @@ function changeQuantity(index, quantity) {
 
 //function pay
 function pay() {
-  listCard.innerHTML = "";
-  listCards = [];
-  quantity.innerHTML = "";
-  total.innerHTML = 0;
-  getElement(".notice").style = "display:block";
-  alert("Cám ơn bạn đã mua hàng");
+  if (confirm("Bạn có đồng ý thanh toán")) {
+    listCard.innerHTML = "";
+    listCards = [];
+    quantity.innerHTML = "";
+    total.innerHTML = 0;
+    getElement(".notice").style = "display:block";
+  }
 }

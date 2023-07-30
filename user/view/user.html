@@ -76,6 +76,7 @@
             <a href="../../index.html">
               <button class="button-37" role="button">Quay Lại</button>
             </a>
+            <div id="popup" class="hidden">Cảm ơn bạn đã mua hàng!</div>
             <div class="input-group mb-3">
               <input
                 type="text"
@@ -94,7 +95,8 @@
           </div>
         </div>
 
-        <!-- sản phẩm  -->
+        <!-- product -->
+
         <div class="row list" id="listProduct">
           <!-- <div class="col-4">
               <div class="card p-5 bg-danger">
@@ -199,7 +201,7 @@
       <div class="modal-content">
         <header class="head-form mb-0">
           <h2 id="header-title">Giỏ Hàng</h2>
-          <h3 class="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
+          <h3 class="notice">Giỏ hàng của bạn đang trống</h3>
           <ul class="listCard"></ul>
           <div class="money">Tổng tiền : <span class="total">0</span></div>
         </header>
@@ -258,6 +260,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="../../admin/services/productAPI.js"></script>
   <script src="../../admin/model/products.js"></script>
+  <script src="../controller/effect.js"></script>
   <script src="../controller/cart.js"></script>
   <script src="../../user/controller/main.js"></script>
 </html>
