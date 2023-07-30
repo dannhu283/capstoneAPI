@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Nunito Sans", sans-serif;
+}
+html,
+body {
+  font-size: 16px;
+  color: $color-darkAD-1;
+  background-color: $color-grayAD-1;
+  scroll-behavior: smooth;
+}

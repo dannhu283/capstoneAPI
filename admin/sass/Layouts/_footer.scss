@@ -1,0 +1,24 @@
+footer {
+  height: 47px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .footer-content {
+    .footer-title {
+      @include styleText($fs-3, $fw-500, $color-darkAD-1);
+      span {
+        opacity: 0.5;
+        cursor: pointer;
+        transition: all 0.5s;
+        @include styleText($fs-3, $fw-500, $color-redAD-1);
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

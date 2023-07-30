@@ -15,14 +15,673 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <!-- FontAwesome 6.2.0 CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Font Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- scrollbar CSS -->
+    <link rel="stylesheet" href="../css/scrollBar.css" />
     <!-- CSS Main AD -->
     <link rel="stylesheet" href="../css/mainAdmin.css" />
   </head>
 
   <body>
-    <div class="container">
-      <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">Admin</a>
+    <header>
+      <nav id="navCollapse" class="navbar navbar-vertical navbar-expand-lg">
+        <div class="collapse navbar-collapse flex-column">
+          <!-- scrollbar removed-->
+          <div class="navbar-vertical-content">
+            <ul class="navbar-nav flex-column pl-3">
+              <li class="nav-item">
+                <!-- parent pages-->
+                <div class="nav-item-wrapper">
+                  <a
+                    data-toggle="collapse"
+                    href="#collapseExample"
+                    role="button"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                    class="nav-link"
+                    ><div class="d-flex align-items-center nav-item-apps">
+                      <span class="nav-link-icon"
+                        ><i class="fa-solid fa-chart-pie"></i
+                      ></span>
+                      <span class="nav-link-text">Home</span>
+                    </div></a
+                  >
+                  <div class="collapse" id="collapseExample">
+                    <div class="parent-wrapper label-1">
+                      <ul class="nav parent collapse show">
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <div class="d-flex align-items-center">
+                              <span class="nav-link-text">E commerce</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <div class="d-flex align-items-center">
+                              <span class="nav-link-text"
+                                >Project management</span
+                              >
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <div class="d-flex align-items-center">
+                              <span class="nav-link-text">CRM</span>
+                              <span class="badge ml-2 badge-info">New</span>
+                            </div>
+                          </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="nav-link">
+                            <div class="d-flex align-items-center">
+                              <span class="nav-link-text">Social feed</span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="nav-item">
+                <!-- label-->
+                <p class="navbar-vertical-label">Apps</p>
+                <hr class="hr-label my-3" style="display: none" />
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-cart-shopping"></i
+                    ></span>
+                    <span class="nav-link-text">E commerce</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-phone"></i
+                    ></span>
+                    <span class="nav-link-text">CRM</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-clipboard"></i
+                    ></span>
+                    <span class="nav-link-text">Project management</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-message"></i
+                    ></span>
+                    <span class="nav-link-text">Chat</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-envelope"></i
+                    ></span>
+                    <span class="nav-link-text">Email</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-bookmark"></i
+                    ></span>
+                    <span class="nav-link-text">Events</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-brands fa-trello"></i
+                    ></span>
+                    <span class="nav-link-text">Kanban</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-share-nodes"></i
+                    ></span>
+                    <span class="nav-link-text">Social</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-calendar"></i
+                    ></span>
+                    <span class="nav-link-text">Calendar</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <!-- label-->
+                <p class="navbar-vertical-label">Pages</p>
+                <hr class="hr-label my-3" style="display: none" />
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-compass"></i
+                    ></span>
+                    <span class="nav-link-text">Starter</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-circle-question"></i
+                    ></span>
+                    <span class="nav-link-text">Faq</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-globe"></i
+                    ></span>
+                    <span class="nav-link-text">Landing</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-tag"></i
+                    ></span>
+                    <span class="nav-link-text">Pricing</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-bell"></i
+                    ></span>
+                    <span class="nav-link-text">Notifications</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-users"></i
+                    ></span>
+                    <span class="nav-link-text">Members</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-clock"></i
+                    ></span>
+                    <span class="nav-link-text">Timeline</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-triangle-exclamation"></i
+                    ></span>
+                    <span class="nav-link-text">Errors</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-lock"></i
+                    ></span>
+                    <span class="nav-link-text">Authentication</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16px"
+                        height="16px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="feather feather-layout"
+                      >
+                        <rect
+                          x="3"
+                          y="3"
+                          width="18"
+                          height="18"
+                          rx="2"
+                          ry="2"
+                        ></rect>
+                        <line x1="3" y1="9" x2="21" y2="9"></line>
+                        <line x1="9" y1="21" x2="9" y2="9"></line></svg
+                    ></span>
+                    <span class="nav-link-text">Layouts</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <!-- label-->
+                <p class="navbar-vertical-label">MODULES</p>
+                <hr class="hr-label my-3" style="display: none" />
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-file-lines"></i
+                    ></span>
+                    <span class="nav-link-text">Forms</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-table-cells-large"></i
+                    ></span>
+                    <span class="nav-link-text">Icons</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-table-columns"></i
+                    ></span>
+                    <span class="nav-link-text">Tables</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-chart-simple"></i
+                    ></span>
+                    <span class="nav-link-text">ECharts</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-cube"></i
+                    ></span>
+                    <span class="nav-link-text">Components</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-wrench"></i
+                    ></span>
+                    <span class="nav-link-text">Utilities</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-server"></i
+                    ></span>
+                    <span class="nav-link-text">Widgets</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-layer-group"></i
+                    ></span>
+                    <span class="nav-link-text">Multi level</span>
+                  </div>
+                </a>
+              </li>
+              <li class="nav-item">
+                <!-- label-->
+                <p class="navbar-vertical-label">DOCUMENTATION</p>
+                <hr class="hr-label my-3" style="display: none" />
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-regular fa-life-ring"></i
+                    ></span>
+                    <span class="nav-link-text">Getting started</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-gear"></i
+                    ></span>
+                    <span class="nav-link-text">Customization</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-table-list"></i
+                    ></span>
+                    <span class="nav-link-text">Layouts doc</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-brands fa-gulp"></i
+                    ></span>
+                    <span class="nav-link-text">Gulp</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-brands fa-figma"></i
+                    ></span>
+                    <span class="nav-link-text">Design file</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-code-merge"></i
+                    ></span>
+                    <span class="nav-link-text">Changelog</span>
+                  </div>
+                </a>
+                <!-- parent pages-->
+                <a
+                  data-toggle="collapse"
+                  href="#"
+                  role="button"
+                  aria-expanded="false"
+                  aria-controls="collapseExample"
+                  class="nav-link"
+                  ><div class="d-flex align-items-center nav-item-apps">
+                    <span class="nav-link-icon"
+                      ><i class="fa-solid fa-desktop"></i
+                    ></span>
+                    <span class="nav-link-text">Showcase</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="navbar-vertical-footer">
+            <button
+              class="btn navbar-vertical-toggle mx-auto mt-2 d-block"
+              id="collapsedView"
+            >
+              <span id="collapseLeft" class="uil uil-left-arrow-to-left fs-0"
+                ><i class="fa-solid fa-arrow-left-long"></i></span
+              ><span
+                id="collapseRight"
+                class="uil uil-arrow-from-right fs-0"
+                style="display: none"
+                ><i class="fa-solid fa-arrow-right-long"></i></span
+              ><span class="navbar-vertical-footer-text ms-2"
+                >Collapsed View</span
+              >
+            </button>
+          </div>
+        </div>
+      </nav>
+      <nav class="navbar navbar-top fixed-top navbar-expand">
+        <a class="navbar-brand" href="#">
+          <span>
+            <img
+              src="https://prium.github.io/phoenix/v1.13.0/assets/img/icons/logo.png"
+              alt="logo"
+              width="10%"
+            />
+          </span>
+          Capstone Js-API</a
+        >
         <button
           class="navbar-toggler d-lg-none"
           type="button"
@@ -33,246 +692,547 @@
           aria-label="Toggle navigation"
         ></button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#"
-                >Home <span class="sr-only">(current)</span></a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active dropdown">
               <a
-                class="nav-link dropdown-toggle"
+                class="nav-link"
                 href="#"
-                id="dropdownId"
+                id="navbarDropdown"
+                role="button"
                 data-toggle="dropdown"
                 aria-haspopup="true"
                 aria-expanded="false"
-                >Dropdown</a
+                ><i class="fa-solid fa-bell"></i>
+                <span class="sr-only">(current)</span></a
               >
-              <div class="dropdown-menu" aria-labelledby="dropdownId">
-                <a class="dropdown-item" href="#">Action 1</a>
-                <a class="dropdown-item" href="#">Action 2</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/capstoneAPI/index.html"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></a>
             </li>
           </ul>
         </div>
       </nav>
-
-      <header class="display-4 my-4">Capstone Js-API</header>
-      <!-- Phan tab menu -->
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            href="#DanhSachSP"
-            role="tab"
-            data-toggle="tab"
-            >Danh sách sản phẩm</a
-          >
-        </li>
-      </ul>
-      <br />
-      <!-- Tab panes -->
-      <div class="tab-content">
-        <!--Danh sách sản phẩm -->
-        <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
-          <div class="row">
-            <div class="col-md-8">
-              <!-- BEGIN BUTTON THÊM MỚI -->
-              <button
-                id="btnThemSP"
-                class="btn btn-success"
-                data-toggle="modal"
-                data-target="#myModal"
-              >
-                <i class="fa fa-plus mr-1"></i>
-                Thêm Mới
-              </button>
-              <!-- END BUTTON THÊM MỚI -->
-            </div>
-            <div class="col-md-4">
-              <!-- BEGIN TÌM KIẾM -->
-              <div class="input-group mb-3">
-                <input
-                  type="text"
-                  id="txtSearch"
-                  class="form-control"
-                  placeholder="Nhập từ khoá"
-                  aria-label="Recipient's username"
-                  aria-describedby="basic-addon2"
-                />
-                <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2"
-                    ><i class="fa fa-search"></i
-                  ></span>
+    </header>
+    <!-- Ecommerce Dashboard -->
+    <main id="body">
+      <!-- data -->
+      <section class="data py-5 mt-5">
+        <div class="data-content">
+          <div class="row g-2">
+            <div
+              class="data-left d-flex flex-column justify-content-between col-6"
+            >
+              <!-- ecommerce -->
+              <div class="ecommerce pb-5">
+                <div class="ecommerce-title">
+                  <h2 class="ecommerce-title-h2">Ecommerce Dashboard</h2>
+                  <p class="ecommerce-title-p">
+                    Here’s what’s going on at your business right now
+                  </p>
+                </div>
+                <div class="ecommerce-content">
+                  <div class="row justify-content-start align-items-center g-2">
+                    <div class="col-4 ecommerce-item">
+                      <div class="d-flex align-items-center">
+                        <div class="ecommerce-icon text-success">
+                          <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="ecommerce-text">
+                          <h3>57 new orders</h3>
+                          <p>Awaiting processing</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 ecommerce-item">
+                      <div class="d-flex align-items-center">
+                        <div class="ecommerce-icon text-warning">
+                          <i class="fa-solid fa-pause"></i>
+                        </div>
+                        <div class="ecommerce-text">
+                          <h3>5 orders</h3>
+                          <p>On hold</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4 ecommerce-item">
+                      <div class="d-flex align-items-center">
+                        <div class="ecommerce-icon text-danger">
+                          <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                        <div class="ecommerce-text">
+                          <h3>15 products</h3>
+                          <p>Out of stock</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <!-- END TÌM KIẾM -->
+              <!-- chart -->
+              <div class="chart">
+                <div class="d-flex justify-content-between">
+                  <div class="chart-title">
+                    <h2>Total sells</h2>
+                    <p>Payment received across all channels</p>
+                  </div>
+                  <div class="chart-dropdown">
+                    <select class="custom-select">
+                      <option>Jan 1 - 31, 2023</option>
+                      <option>Feb 1 - 28, 2023</option>
+                      <option>Mar 1 - 31, 2023</option>
+                      <option>April 1 - 30, 2023</option>
+                      <option>May 1 - 31, 2023</option>
+                      <option>June 1 - 30, 2023</option>
+                      <option>July 1 - 31, 2023</option>
+                      <option>Aug 1 - 31, 2023</option>
+                      <option>Sep 1 - 30, 2023</option>
+                      <option>Oct 1 - 31, 2023</option>
+                      <option>Nov 1 - 30, 2023</option>
+                      <option>Dec 1 - 31, 2023</option>
+                    </select>
+                  </div>
+                </div>
+                <canvas id="myChart"></canvas>
+              </div>
+            </div>
+            <div class="data-right col-6">
+              <div class="row">
+                <div class="col-6">
+                  <div class="data-item">
+                    <div
+                      class="data-item-header d-flex justify-content-between"
+                    >
+                      <div>
+                        <h5>Total orders</h5>
+                        <h6>Last 7 days</h6>
+                      </div>
+                      <h4>16,247</h4>
+                    </div>
+                    <div class="data-item-body">
+                      <div class="data-item-chart">
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 50px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 80px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 30px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 100px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 60px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="data-item-footer">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="data-bullet-item bg-primary me-2"></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Completed
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">52%</h6>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                        <div
+                          class="data-bullet-item bg-secondary-subtle me-2"
+                        ></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Pending payment
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">48%</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="data-item">
+                    <div
+                      class="data-item-header d-flex justify-content-between"
+                    >
+                      <div>
+                        <h5>Total orders</h5>
+                        <h6>Last 7 days</h6>
+                      </div>
+                      <h4>16,247</h4>
+                    </div>
+                    <div class="data-item-body">
+                      <div class="data-item-chart">
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 50px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 80px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 30px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 100px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 60px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="data-item-footer">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="data-bullet-item bg-primary me-2"></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Completed
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">52%</h6>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                        <div
+                          class="data-bullet-item bg-secondary-subtle me-2"
+                        ></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Pending payment
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">48%</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="data-item">
+                    <div
+                      class="data-item-header d-flex justify-content-between"
+                    >
+                      <div>
+                        <h5>Total orders</h5>
+                        <h6>Last 7 days</h6>
+                      </div>
+                      <h4>16,247</h4>
+                    </div>
+                    <div class="data-item-body">
+                      <div class="data-item-chart">
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 50px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 80px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 30px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 100px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 60px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="data-item-footer">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="data-bullet-item bg-primary me-2"></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Completed
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">52%</h6>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                        <div
+                          class="data-bullet-item bg-secondary-subtle me-2"
+                        ></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Pending payment
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">48%</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="data-item">
+                    <div
+                      class="data-item-header d-flex justify-content-between"
+                    >
+                      <div>
+                        <h5>Total orders</h5>
+                        <h6>Last 7 days</h6>
+                      </div>
+                      <h4>16,247</h4>
+                    </div>
+                    <div class="data-item-body">
+                      <div class="data-item-chart">
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 50px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 80px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 30px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 100px"></div>
+                        </div>
+                        <div class="data-item-bar">
+                          <div class="bar" style="height: 60px"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="data-item-footer">
+                      <div class="d-flex align-items-center mb-2">
+                        <div class="data-bullet-item bg-primary me-2"></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Completed
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">52%</h6>
+                      </div>
+                      <div class="d-flex align-items-center mb-2">
+                        <div
+                          class="data-bullet-item bg-secondary-subtle me-2"
+                        ></div>
+                        <h6 class="text-900 fw-semi-bold flex-1 mb-0">
+                          Pending payment
+                        </h6>
+                        <h6 class="text-900 fw-semi-bold mb-0 ml-auto">48%</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="clear-fix"></div>
-          <div class="tblSanPham" id="tblSanPham">
-            <!-- BEGIN TABLE SẢN PHẨM -->
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>STT</th>
-                  <th>Tên Sản Phẩm</th>
-                  <th id="sapXepGia">Giá</th>
-                  <th>Màn hình</th>
-                  <th>Camera sau</th>
-                  <th>Camera trước</th>
-                  <th>Hình Ảnh</th>
-                  <th>Mô Tả</th>
-                  <th>Điện thoại</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody id="tblDanhSachSP"></tbody>
-            </table>
-            <!-- END TABLE SẢN PHẨM -->
-          </div>
-          <br />
         </div>
-        <!-- Kết thúc danh sách sản phẩm -->
-      </div>
+      </section>
+      <!-- product -->
+      <section class="product pt-5 px-3">
+        <!-- Phan tab menu -->
+        <div class="product-title">
+          <h3>List Product</h3>
+          <p>Payment received across all channels</p>
+        </div>
+        <br />
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <!--Danh sách sản phẩm -->
+          <div role="tabpanel" class="tab-pane in active" id="DanhSachSP">
+            <div class="row">
+              <div class="col-md-8">
+                <!-- BEGIN BUTTON THÊM MỚI -->
+                <button
+                  id="btnThemSP"
+                  class="btn btn-success"
+                  data-toggle="modal"
+                  data-target="#myModal"
+                >
+                  <i class="fa fa-plus mr-1"></i>
+                  Thêm Mới
+                </button>
+                <!-- END BUTTON THÊM MỚI -->
+              </div>
+              <div class="col-md-4">
+                <!-- BEGIN TÌM KIẾM -->
+                <div class="input-group mb-3">
+                  <input
+                    type="text"
+                    id="txtSearch"
+                    class="form-control mr-2 rounded"
+                    placeholder="Search"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                  />
+                  <div class="dropdown">
+                    <button
+                      class="btn btn-success text-white"
+                      type="button"
+                      id="dropdownMenu2"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      ...
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                      <button class="dropdown-item" type="button">
+                        Action
+                      </button>
+                      <button class="dropdown-item" type="button">
+                        Another action
+                      </button>
+                      <button class="dropdown-item" type="button">
+                        Something else here
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- END TÌM KIẾM -->
+              </div>
+            </div>
+            <div class="clear-fix"></div>
+            <div class="tblSanPham" id="tblSanPham">
+              <!-- BEGIN TABLE SẢN PHẨM -->
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>STT</th>
+                    <th>Tên Sản Phẩm</th>
+                    <th id="sapXepGia">
+                      <span>Giá</span>
+                      <div id="upAnDown">
+                        <span class="selectUp"
+                          ><i class="fa-solid fa-chevron-up"></i
+                        ></span>
+                        <span class="selectDown"
+                          ><i class="fa-solid fa-chevron-down"></i
+                        ></span>
+                        <div class="selectInvisible"></div>
+                      </div>
+                    </th>
+                    <th>Màn hình</th>
+                    <th>Camera sau</th>
+                    <th>Camera trước</th>
+                    <th>Hình Ảnh</th>
+                    <th>Mô Tả</th>
+                    <th>Điện thoại</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="tblDanhSachSP"></tbody>
+              </table>
+              <!-- END TABLE SẢN PHẨM -->
+            </div>
+            <br />
+          </div>
+          <!-- Kết thúc danh sách sản phẩm -->
+        </div>
+      </section>
+      <footer class="border-top">
+        <div class="footer-content">
+          <p class="footer-title m-0">Designer by <span>NGO TUAN KIET</span></p>
+        </div>
+      </footer>
+    </main>
 
-      <!--KẾT THÚC TabMenu-->
+    <!--KẾT THÚC TabMenu-->
 
-      <!-- The Modal -->
-      <div class="modal fade" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">Modal Heading</h4>
-              <button type="button" class="close" data-dismiss="modal">
-                &times;
-              </button>
+    <!-- The Modal -->
+    <div class="modal fade" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <h4 class="modal-title">Modal Heading</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="form-group mb-0">
+              <label>Tên Sản Phẩm</label>
+              <input
+                type="text"
+                id="TenSP"
+                class="form-control"
+                placeholder="Nhập vào tên sản phẩm"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbTenSP"></span>
             </div>
-            <!-- Modal body -->
-            <div class="modal-body">
-              <div class="form-group mb-0">
-                <label>Tên Sản Phẩm</label>
-                <input
-                  type="text"
-                  id="TenSP"
-                  class="form-control"
-                  placeholder="Nhập vào tên sản phẩm"
-                />
-                <span class="text-danger sp-thongbao ml-2" id="tbTenSP"></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Giá</label>
-                <input
-                  type="text"
-                  id="GiaSP"
-                  class="form-control"
-                  placeholder="Nhập vào giá"
-                />
-                <span class="text-danger sp-thongbao ml-2" id="tbGiaSP"></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Màn hình</label>
-                <input
-                  type="text"
-                  id="ManHinhSp"
-                  class="form-control"
-                  placeholder="Nhập thông số màn hình"
-                />
-                <span
-                  class="text-danger sp-thongbao ml-2"
-                  id="tbManHinhSp"
-                ></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Camera sau</label>
-                <input
-                  type="text"
-                  id="BackCam"
-                  class="form-control"
-                  placeholder="Nhập chất lượng camera sau"
-                />
-                <span
-                  class="text-danger sp-thongbao ml-2"
-                  id="tbBackCam"
-                ></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Camera trước</label>
-                <input
-                  id="FrontCam"
-                  class="form-control"
-                  placeholder="Nhập chất lượng camera trước"
-                />
-                <span
-                  class="text-danger sp-thongbao ml-2"
-                  id="tbFrontCam"
-                ></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Hình Ảnh</label>
-                <input
-                  id="HinhSP"
-                  class="form-control"
-                  placeholder="Nhập vào hình sản phẩm"
-                />
-                <span class="text-danger sp-thongbao ml-2" id="tbHinhSP"></span>
-              </div>
-              <div class="form-group mb-0">
-                <label>Mô tả</label>
-                <input
-                  id="NoiDung"
-                  class="form-control"
-                  placeholder="Nhập nội dung sản phẩm"
-                />
-                <span
-                  class="text-danger sp-thongbao ml-2"
-                  id="tbNoiDung"
-                ></span>
-              </div>
-              <div class="form-group mb-0">
-                <label for="">Loại sản phẩm: </label>
-                <select class="form-control" id="loaiSP">
-                  <option value="">Vui lòng chọn sản phẩm</option>
-                  <option value="Iphone">Iphone</option>
-                  <option value="Samsung">Samsung</option>
-                  <option value="Oppo">Oppo</option>
-                  <option value="Xiaomi">Xiaomi</option>
-                  <option value="Vivo">Vivo</option>
-                  <option value="Realme">Realme</option>
-                  <option value="Nokia">Nokia</option>
-                </select>
-                <span class="text-danger sp-thongbao ml-2" id="tbloaiSP"></span>
-              </div>
+            <div class="form-group mb-0">
+              <label>Giá</label>
+              <input
+                type="text"
+                id="GiaSP"
+                class="form-control"
+                placeholder="Nhập vào giá"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbGiaSP"></span>
             </div>
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-primary">Save</button>
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
+            <div class="form-group mb-0">
+              <label>Màn hình</label>
+              <input
+                type="text"
+                id="ManHinhSp"
+                class="form-control"
+                placeholder="Nhập thông số màn hình"
+              />
+              <span
+                class="text-danger sp-thongbao ml-2"
+                id="tbManHinhSp"
+              ></span>
             </div>
+            <div class="form-group mb-0">
+              <label>Camera sau</label>
+              <input
+                type="text"
+                id="BackCam"
+                class="form-control"
+                placeholder="Nhập chất lượng camera sau"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbBackCam"></span>
+            </div>
+            <div class="form-group mb-0">
+              <label>Camera trước</label>
+              <input
+                id="FrontCam"
+                class="form-control"
+                placeholder="Nhập chất lượng camera trước"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbFrontCam"></span>
+            </div>
+            <div class="form-group mb-0">
+              <label>Hình Ảnh</label>
+              <input
+                id="HinhSP"
+                class="form-control"
+                placeholder="Nhập vào hình sản phẩm"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbHinhSP"></span>
+            </div>
+            <div class="form-group mb-0">
+              <label>Mô tả</label>
+              <input
+                id="NoiDung"
+                class="form-control"
+                placeholder="Nhập nội dung sản phẩm"
+              />
+              <span class="text-danger sp-thongbao ml-2" id="tbNoiDung"></span>
+            </div>
+            <div class="form-group mb-0">
+              <label for="">Loại sản phẩm: </label>
+              <select class="form-control" id="loaiSP">
+                <option value="">Vui lòng chọn sản phẩm</option>
+                <option value="Iphone">Iphone</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Oppo">Oppo</option>
+                <option value="Xiaomi">Xiaomi</option>
+                <option value="Vivo">Vivo</option>
+                <option value="Realme">Realme</option>
+                <option value="Nokia">Nokia</option>
+              </select>
+              <span class="text-danger sp-thongbao ml-2" id="tbloaiSP"></span>
+            </div>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
           </div>
         </div>
       </div>
     </div>
-    <div id="container"></div>
-    <style>
-      #container {
-        min-width: 310px;
-        max-width: 800px;
-        height: 400px;
-        margin: 0 auto;
-      }
-    </style>
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -288,7 +1248,16 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.3.2/chart.min.js"
+      integrity="sha512-csUso5vWY3PpIJkxLWFbPI7KkjXFhKXpUaAUp1ZLyNhxVWdQacEPH9e7Iw6Rco4es1uQNnlxdCCFkSnJ/f1ZzA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="../controller/chart.js"></script>
     <script src="../model/products.js"></script>
     <script src="../services/productAPI.js"></script>
     <script src="../controller/inputNumber.js"></script>

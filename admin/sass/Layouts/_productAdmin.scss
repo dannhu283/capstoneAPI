@@ -1,0 +1,47 @@
+// Product
+.product {
+  background-color: $color-whiteAD-1;
+  position: relative;
+  overflow: hidden;
+  .product-title {
+    h3 {
+      @include styleText($fs-5, $fw-800, $color-darkAD-1);
+    }
+    p {
+      @include styleText($fs-3, $fw-400, $color-darkAD-1);
+    }
+  }
+  #basic-addon2 {
+    cursor: pointer;
+    transition: all 0.5s;
+    &:hover {
+      background-color: green;
+      color: $color-whiteAD-1;
+    }
+  }
+  .tab-content {
+    .tblSanPham {
+      .table {
+        margin: 0;
+        #sapXepGia {
+          cursor: pointer;
+          #upAnDown {
+            width: 5px;
+            height: 5px;
+            display: inline-block;
+            color: $color-whiteAD-1;
+            font-size: $fs-1;
+            line-height: 0;
+            .selectUp {
+              display: block;
+            }
+            .selectInvisible {
+              display: none;
+              height: 7px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

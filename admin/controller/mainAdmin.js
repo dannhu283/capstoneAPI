@@ -59,10 +59,10 @@ function display(products) {
             class="btn btn-primary"
             onclick="selectProduct(${product.id})"
           >
-            Xem
+            Chỉnh sửa
           </button>
           <button 
-            class="btn btn-danger mt-2"
+            class="btn btn-danger"
             onclick="deleteProduct(${product.id})"
           >
             Xoá
@@ -83,6 +83,7 @@ getElement("#btnThemSP").onclick = () => {
     <button class="btn btn-danger" data-dismiss="modal">Huỷ</button>
   `;
   addBlurEventListeners();
+  addInputEventListeners();
 };
 
 // Hàm tạo product
@@ -148,6 +149,7 @@ function selectProduct(productId) {
       console.log(error);
     });
   addBlurEventListeners();
+  addInputEventListeners();
 }
 
 // Hàm cập nhật sản phẩm
@@ -172,30 +174,28 @@ function updateProduct(productId) {
 }
 
 // Hàm tìm kiếm
-getElement("#txtSearch").onkeypress = (event) => {
-  if (event.key !== "Enter") {
-    return;
+getElement("#txtSearch").oninput = (event) => {
+  if (event.target.value === "" || event.target.value) {
+    apiGetProducts(event.target.value)
+      .then((response) => {
+        display(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   }
-  apiGetProducts(event.target.value)
-    .then((response) => {
-      display(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
 };
-
-getElement("#basic-addon2").onclick = () => {
-  let search = getElement("#txtSearch").value;
-  apiGetProducts(search)
-    .then((response) => {
-      display(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+getElement("#txtSearch").onfocusout = (event) => {
+  if (event.target.value === "" || event.target.value) {
+    apiGetProducts(event.target.value)
+      .then((response) => {
+        display(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 };
-
 // Hàm resetForm
 function resetForm() {
   getElement("#TenSP").value = "";
@@ -297,6 +297,17 @@ function addBlurEventListeners() {
   getElement("#loaiSP").addEventListener("blur", validateType);
 }
 
+// Hàm lắng nghe sự kiện input để kiểm tra lại dữ liệu khi đang gõ
+function addInputEventListeners() {
+  getElement("#TenSP").addEventListener("input", validateName);
+  getElement("#GiaSP").addEventListener("input", validatePrice);
+  getElement("#ManHinhSp").addEventListener("input", validateScreen);
+  getElement("#BackCam").addEventListener("input", validateBackCamera);
+  getElement("#FrontCam").addEventListener("input", validateFrontCamera);
+  getElement("#HinhSP").addEventListener("input", validateImg);
+  getElement("#NoiDung").addEventListener("input", validateDesc);
+  getElement("#loaiSP").addEventListener("input", validateType);
+}
 // validation
 function validateName() {
   let name = getElement("#TenSP").value;
@@ -310,9 +321,6 @@ function validateName() {
   } else {
     spanName.innerHTML = "";
   }
-
-  // Lắng nghe sự kiện input để kiểm tra lại dữ liệu khi đang gõ
-  getElement("#TenSP").addEventListener("input", validateName);
   return name;
 }
 
@@ -407,19 +415,78 @@ function validateType() {
   return type;
 }
 // Biến lưu trạng thái sắp xếp (mặc định là không sắp xếp)
-let sortAscending = false;
+let clickCount = 0;
 // Hàm sắp xếp theo giá tiền
 getElement("#sapXepGia").onclick = () => {
   apiGetProducts()
     .then((response) => {
-      sortAscending = !sortAscending;
       let product = response.data;
-      product.sort((a, b) => {
-        return sortAscending ? a.price - b.price : b.price - a.price;
-      });
-      display(product);
+      if (clickCount === 2) {
+        getElement(".selectUp").style.display = "inline-block";
+        getElement(".selectDown").style.display = "inline-block";
+        getElement(".selectInvisible").style.display = "none";
+        display(product);
+        clickCount = 0;
+      } else {
+        product.sort((a, b) => {
+          if (clickCount === 0) {
+            getElement(".selectUp").style.display = "none";
+            return a.price - b.price;
+          } else if (clickCount === 1) {
+            getElement(".selectUp").style.display = "inline-block";
+            getElement(".selectDown").style.display = "none";
+            getElement(".selectInvisible").style.display = "inline-block";
+            return b.price - a.price;
+          }
+        });
+        display(product);
+        clickCount++;
+      }
     })
     .catch((error) => {
       console.log(error);
     });
+};
+
+// Collapsed View
+let isCollapse = false;
+getElement("#collapsedView").onclick = () => {
+  isCollapse = !isCollapse;
+  const linkText = getElements(".nav-link-text");
+  const navbarLabel = getElements(".navbar-vertical-label");
+  const hrLabel = getElements(".hr-label");
+  for (let val of linkText) {
+    if (isCollapse) {
+      val.style.display = "none";
+    } else {
+      val.style.display = "block";
+    }
+  }
+  for (let val of navbarLabel) {
+    if (isCollapse) {
+      val.style.display = "none";
+    } else {
+      val.style.display = "block";
+    }
+  }
+  for (let val of hrLabel) {
+    if (isCollapse) {
+      val.style.display = "block";
+    } else {
+      val.style.display = "none";
+    }
+  }
+  if (isCollapse) {
+    getElement("#navCollapse").style.width = "5rem";
+    getElement(".navbar-vertical-footer-text").style.display = "none";
+    getElement("#collapseRight").style.display = "inline-block";
+    getElement("#collapseLeft").style.display = "none";
+    getElement("#body").style.marginLeft = "5rem";
+  } else {
+    getElement("#navCollapse").style.width = "14rem";
+    getElement(".navbar-vertical-footer-text").style.display = "inline-block";
+    getElement("#collapseRight").style.display = "none";
+    getElement("#collapseLeft").style.display = "inline-block";
+    getElement("#body").style.marginLeft = "14rem";
+  }
 };
