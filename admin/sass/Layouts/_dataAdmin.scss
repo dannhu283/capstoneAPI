@@ -1,0 +1,104 @@
+#body {
+  overflow: hidden;
+  margin-left: 14rem;
+  transition: all 0.3s;
+  .data {
+    border-bottom: 1px solid $color-grayAD-2;
+    .data-content {
+      .data-left {
+        .ecommerce {
+          padding-top: 44px;
+          padding-left: 1rem;
+          border-bottom: 1px solid $color-grayAD-2;
+          .ecommerce-title-h2 {
+            @include styleText($fs-7, $fw-800, $color-darkAD-1);
+          }
+          .ecommerce-title-p {
+            opacity: 0.6;
+            @include styleText($fs-3, $fw-700, $color-darkAD-1);
+          }
+          .ecommerce-content {
+            .ecommerce-item {
+              .ecommerce-icon {
+                @include styleText($fs-11, $fw-400, none);
+              }
+              .ecommerce-text {
+                margin-left: 0.7rem;
+                h3 {
+                  @include styleText($fs-4, $fw-800, $color-darkAD-1);
+                  margin-bottom: 0;
+                }
+                p {
+                  @include styleText($fs-2, $fw-300, $color-darkAD-1);
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+        .chart {
+          .chart-title {
+            h2 {
+              @include styleText($fs-5, $fw-800, $color-darkAD-1);
+            }
+            p {
+              @include styleText($fs-3, $fw-400, $color-darkAD-1);
+            }
+          }
+        }
+      }
+      .data-right {
+        .data-item {
+          background-color: $color-whiteAD-1;
+          padding: 20px;
+          margin: 15px 0;
+          border-radius: 10px;
+          .data-item-header {
+            h5 {
+              @include styleText($fs-3, $fw-700, $color-darkAD-1);
+            }
+            h6 {
+              opacity: 0.7;
+              @include styleText($fs-2, $fw-700, $color-darkAD-1);
+            }
+            h4 {
+              @include styleText($fs-4, $fw-700, $color-darkAD-1);
+            }
+          }
+          .data-item-body {
+            .data-item-chart {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-end;
+              max-width: 80px;
+              margin: 50px auto;
+              padding: 10px;
+              .data-item-bar {
+                border-radius: 5px;
+                width: 6px;
+                .bar {
+                  border-radius: 5px;
+                  background-color: #007bff;
+                  &:hover {
+                    background-color: #0056b3;
+                  }
+                }
+              }
+            }
+          }
+          .data-item-footer {
+            .data-bullet-item {
+              height: 0.5rem;
+              width: 1rem;
+              border-radius: 2px;
+              margin-right: 5px;
+            }
+            h6 {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
