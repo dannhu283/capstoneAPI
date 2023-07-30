@@ -2,29 +2,48 @@
     background-color: $color-blue-1;
     .contact{
         @include colums(grid,repeat(3,1.5fr));
+        @include reponsive("small"){
+            @include colums(grid,repeat(2,1.5fr));
+            .item-first{
+                display: none;
+            }
+        }
+       
         &__item{
             text-align: start;
             margin-top: 30px;
-            color: $color-white-1;
+            color: $color-white-1; 
             h2{
                 font-weight: $fw-3;
                 color: $color-green-1;
+                @include reponsive("large"){
+                   margin-left: 30px;
+                 }  
             }
             p{
                 padding: 0 50px 0 50px;
+                @include reponsive("medium"){
+                   padding: 0 0 0 30px;
+                 }
             }
             ul{
                 list-style: none;
                 li{
-                    margin: 10px;
+                    margin: 10px; 
+                    @include reponsive("medium"){
+                    margin: 10px 5px;
+                     }
                 }
                 a{
                     text-decoration: none;
-                    font-size: $fs-2;
+                    font-size: $fs-7;
                     color:$color-white-1 ;
                     &:hover{
                         color: $color-green-1;
                         transition: all .5s;
+                    }
+                    @include reponsive("large"){
+                        font-size: $fs-1;
                     }
                 }
             }

@@ -44,8 +44,7 @@
     />
     <link rel="stylesheet" href="../../asset/css/main.css" />
   </head>
-
-  <body class="">
+  <body>
     <header class="header">
       <div class="container">
         <div class="nav">
@@ -98,57 +97,57 @@
         <!-- sản phẩm  -->
         <div class="row list" id="listProduct">
           <!-- <div class="col-4">
-            <div class="card p-5 bg-danger">
-              <div class="imgtheme">
-                <img
-                  width="80%"
-                  src="../../asset/img/shopping-bag6504.jpg"
-                  alt="sp"
-                />
-                <h3>type</h3>
-                <p>gia</p>
-              </div>
-              <div class="infor d-flex">
-                <div
-                  class="accordion accordion-flush"
-                  id="accordionFlushExample"
-                >
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingOne">
-                      <button
-                        class="accordion-button collapsed"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#flush-collapseOne"
-                        aria-expanded="false"
-                        aria-controls="flush-collapseOne"
+              <div class="card p-5 bg-danger">
+                <div class="imgtheme">
+                  <img
+                    width="80%"
+                    src="../../asset/img/shopping-bag6504.jpg"
+                    alt="sp"
+                  />
+                  <h3>type</h3>
+                  <p>gia</p>
+                </div>
+                <div class="infor d-flex">
+                  <div
+                    class="accordion accordion-flush"
+                    id="accordionFlushExample"
+                  >
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button
+                          class="accordion-button collapsed"
+                          type="button"
+                          data-bs-toggle="collapse"
+                          data-bs-target="#flush-collapseOne"
+                          aria-expanded="false"
+                          aria-controls="flush-collapseOne"
+                        >
+                          name
+                        </button>
+                      </h2>
+                      <div
+                        id="flush-collapseOne"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="flush-headingOne"
+                        data-bs-parent="#accordionFlushExample"
                       >
-                        name
-                      </button>
-                    </h2>
-                    <div
-                      id="flush-collapseOne"
-                      class="accordion-collapse collapse"
-                      aria-labelledby="flush-headingOne"
-                      data-bs-parent="#accordionFlushExample"
-                    >
-                      <div class="accordion-body">
-                        Screen backCamera, value.frontCamera,desc,
+                        <div class="accordion-body">
+                          Screen backCamera, value.frontCamera,desc,
+                        </div>
                       </div>
                     </div>
                   </div>
+                  <button>add to cart</button>
                 </div>
-                <button>add to cart</button>
               </div>
-            </div>
-          </div> -->
+            </div> -->
         </div>
       </div>
     </main>
     <footer class="footer">
       <div class="container">
         <section class="contact">
-          <div class="contact__item">
+          <div class="contact__item item-first">
             <h2>🤖 CyberPhone</h2>
             <p>
               Thanks for shopping and welcome you the next time,We pride
@@ -192,73 +191,73 @@
         </section>
       </div>
     </footer>
+  </body>
 
-    <!-- modal -->
-    <div class="modal fade" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <header class="head-form mb-0">
-            <h2 id="header-title">Giỏ Hàng</h2>
-            <h3 class="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
-            <ul class="listCard"></ul>
-            <div class="money">Tổng tiền : <span class="total">0</span></div>
-          </header>
+  <!-- modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <header class="head-form mb-0">
+          <h2 id="header-title">Giỏ Hàng</h2>
+          <h3 class="notice">🤷‍♂️ Giỏ hàng của bạn đang trống 🤷‍♂️</h3>
+          <ul class="listCard"></ul>
+          <div class="money">Tổng tiền : <span class="total">0</span></div>
+        </header>
 
-          <!-- Modal Header -->
-          <!-- 	<div class="modal-header">
+        <!-- Modal Header -->
+        <!-- 	<div class="modal-header">
 					<h4 class="modal-title" id="modal-title">Modal Heading</h4>
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div> -->
 
-          <!-- Modal body -->
-          <div class="modal-body"></div>
+        <!-- Modal body -->
+        <div class="modal-body"></div>
 
-          <!-- Modal footer -->
-          <div class="modal-footer" id="modal-footer">
-            <button
-              id="btnCapNhat"
-              type="button"
-              class="btn btn-success"
-              data-bs-target="#myModal"
-              class="btn-close closeShopping"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              onclick="pay()"
-            >
-              Thanh toán
-            </button>
-            <button
-              id="btnDong"
-              type="button"
-              class="btn btn-danger"
-              data-bs-target="#myModal"
-              class="btn-close closeShopping"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            >
-              Đóng
-            </button>
-          </div>
+        <!-- Modal footer -->
+        <div class="modal-footer" id="modal-footer">
+          <button
+            id="btnCapNhat"
+            type="button"
+            class="btn btn-success"
+            data-bs-target="#myModal"
+            class="btn-close closeShopping"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            onclick="pay()"
+          >
+            Thanh toán
+          </button>
+          <button
+            id="btnDong"
+            type="button"
+            class="btn btn-danger"
+            data-bs-target="#myModal"
+            class="btn-close closeShopping"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            Đóng
+          </button>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bootstrap JavaScript Libraries -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"
+  ></script>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
-      integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="../../admin/services/productAPI.js"></script>
-    <script src="../../admin/model/products.js"></script>
-    <script src="../controller/cart.js"></script>
-    <script src="../../user/controller/main.js"></script>
-  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="../../admin/services/productAPI.js"></script>
+  <script src="../../admin/model/products.js"></script>
+  <script src="../controller/cart.js"></script>
+  <script src="../../user/controller/main.js"></script>
 </html>
