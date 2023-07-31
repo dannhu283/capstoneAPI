@@ -228,6 +228,16 @@ body .user-second .search {
 body .user-second .search .input-group {
   width: 20%;
 }
+@media screen and (max-width: 768px) {
+  body .user-second .search .input-group {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .user-second .search .input-group {
+    width: 35%;
+  }
+}
 body .user-second .search .input-group #basic-addon2 {
   font-size: 25px;
   cursor: pointer;
@@ -292,6 +302,9 @@ body .user-second .row .over_lay ul {
   transform: translateY(100px);
   transition: all 0.8s;
   overflow: hidden;
+}
+body .user-second .row .over_lay ul li {
+  margin-right: 5px;
 }
 body .user-second .row .over_lay ul h3 {
   text-align: left;

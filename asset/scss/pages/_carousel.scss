@@ -10,6 +10,12 @@ body{
             padding:50px 0;
             .input-group{
                 width: 20%;
+                @include reponsive("medium"){
+                    width: 30%;
+                }
+                @include reponsive("small"){
+                    width: 35%;
+                }
                 #basic-addon2{
                     font-size: 25px;
                     cursor: pointer;
@@ -53,7 +59,6 @@ body{
                     }
                 }
             }
-    
             .over_lay{
                 position: absolute;
                 @include direction(0,0,0,0);
@@ -78,6 +83,9 @@ body{
                     transform: translateY(100px);
                     transition: all .8s;
                     overflow: hidden;
+                    li{
+                        margin-right: 5px;
+                    }
                     h3{
                         text-align: left;
                         color: $color-green-1;
