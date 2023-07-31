@@ -90,6 +90,11 @@ let productStorangeJson = localStorage.getItem("productsJson");
 let productsOb = JSON.parse(productStorangeJson);
 
 let listCards = [];
+
+// firstly If you don't have a product in your cart, you can't click the checkout button
+document.getElementById("btnCapNhat").disabled = true;
+
+// function add product to cart when user clicked button add
 function addToCard(index) {
   if (listCards[index] == null) {
     // copy product form list to list card
@@ -98,14 +103,19 @@ function addToCard(index) {
   }
   reloadCard();
 }
+
 //reload product in cart
 function reloadCard() {
   listCard.innerHTML = "";
   let count = 0;
   let totalPrice = 0;
   listCards.forEach((value, index) => {
-    totalPrice = totalPrice + value.price * 1;
     count = count + value.quantity;
+    totalPrice = totalPrice + value.price * 1;
+    //If the value is greater than 0, then open the payment button
+    if (totalPrice > 0) {
+      document.getElementById("btnCapNhat").disabled = false;
+    }
     if (value != null) {
       getElement(".notice").style = "display:none";
       //creat new div display products in cart
@@ -128,14 +138,21 @@ function reloadCard() {
   });
   total.innerText = totalPrice.toLocaleString();
   quantity.innerText = count;
+  //If there are no products in the cart, change the quantity to an empty string to display
+  if (count <= 0) {
+    quantity.innerText = "";
+  }
 }
 
 //function change quantity if user click add to cart
 function changeQuantity(index, quantity) {
   if (quantity == 0) {
     delete listCards[index];
+    //If there are no products in the cart,toggle the notification display and can't click the checkout button
+    document.getElementById("btnCapNhat").disabled = true;
+    getElement(".notice").style = "display:block";
   } else {
-    listCards[index].quantity = quantity;
+    listCards[index].quantity = quantity * 1;
     listCards[index].price = quantity * productsOb[index].price;
   }
   reloadCard();
@@ -144,10 +161,13 @@ function changeQuantity(index, quantity) {
 //function pay
 function pay() {
   if (confirm("Bạn có đồng ý thanh toán")) {
+    // after user clicked button payment,convert data back to the original
     listCard.innerHTML = "";
     listCards = [];
     quantity.innerHTML = "";
     total.innerHTML = 0;
+    //show cart message again and  you can't click the checkout button because cart is empty
     getElement(".notice").style = "display:block";
+    document.getElementById("btnCapNhat").disabled = true;
   }
 }
