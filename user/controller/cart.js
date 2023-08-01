@@ -69,12 +69,9 @@ function displayProduct(products) {
       </div>
       <div class="btn-add">
         <button 
-        id="statusButton"
-        class="button-37" 
+        class="button-37 statusButton" 
         role="button"
-        onclick="addToCard(${index})">
-        Add ➕ 
-        </button>
+        onclick="addToCard(${index})">Add</button>
       </div>
     </div>
     </div>
@@ -166,7 +163,7 @@ function pay() {
     listCards = [];
     quantity.innerHTML = "";
     total.innerHTML = 0;
-    //show cart message again and  you can't click the checkout button because cart is empty
+    //show cart message again and  you can't click the checkout button because cart is
     getElement(".notice").style = "display:block";
     document.getElementById("btnCapNhat").disabled = true;
   }
