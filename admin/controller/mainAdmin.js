@@ -55,18 +55,20 @@ function display(products) {
         <td>${product.desc}</td>
         <td>${product.type}</td>
         <td>
-          <button 
-            class="btn btn-primary"
-            onclick="selectProduct(${product.id})"
-          >
-            Chỉnh sửa
-          </button>
-          <button 
-            class="btn btn-danger"
-            onclick="deleteProduct(${product.id})"
-          >
-            Xoá
-          </button>
+          <div class="d-flex">
+            <button 
+              class="btn btn-primary"
+              onclick="selectProduct(${product.id})"
+            >
+              Chỉnh sửa
+            </button>
+            <button 
+              class="btn btn-danger ml-2"
+              onclick="deleteProduct(${product.id})"
+            >
+              Xoá
+            </button>
+          </div>
         </td>
       </tr>
       `

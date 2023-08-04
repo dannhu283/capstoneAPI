@@ -9,7 +9,6 @@
         .ecommerce {
           padding-top: 44px;
           padding-left: 1rem;
-          border-bottom: 1px solid $color-grayAD-2;
           .ecommerce-title-h2 {
             @include styleText($fs-7, $fw-800, $color-darkAD-1);
           }
