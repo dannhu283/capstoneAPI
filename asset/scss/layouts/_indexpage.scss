@@ -13,7 +13,7 @@
         font-size: $fs-4;
         @include reponsive("large"){
             font-size: 60px;
-            padding-left: 20%;
+            padding-left: 10%;
         }
         @include reponsive("medium"){
             padding-left: 10%;

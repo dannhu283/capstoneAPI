@@ -72,7 +72,7 @@ function displayProduct(products) {
         <button 
         class="button-37 statusButton" 
         role="button"
-        onclick="addToCard(${index})">Add</button>
+        onclick="addToCard(${index})">Add ➕</button>
       </div>
     </div>
     </div>
@@ -118,6 +118,8 @@ function addToCard(index) {
   }
 
   reloadCard();
+  //save cart on localStorange
+  localStorage.setItem("lisCards", JSON.stringify(listCards));
 }
 
 //reload product in cart
@@ -154,6 +156,7 @@ function reloadCard() {
   });
   total.innerText = totalPrice.toLocaleString();
   quantity.innerText = count;
+
   //If there are no products in the cart, change the quantity to an empty string to display
   if (count <= 0) {
     quantity.innerText = "";
@@ -171,7 +174,10 @@ function changeQuantity(index, quantity) {
     listCards[index].quantity = quantity * 1;
     listCards[index].price = quantity * productsOb[index].price;
   }
+
   reloadCard();
+  //save cart on localStorange
+  localStorage.setItem("lisCards", JSON.stringify(listCards));
 }
 
 //function pay
@@ -185,5 +191,7 @@ function pay() {
     //show cart message again and  you can't click the checkout button because cart is
     getElement(".notice").style = "display:block";
     document.getElementById("btnCapNhat").disabled = true;
+    //save cart on localStorange
+    localStorage.setItem("lisCards", JSON.stringify(listCards));
   }
 }

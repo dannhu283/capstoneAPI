@@ -7,7 +7,7 @@ body{
         .search{
             display: flex;
             justify-content: space-between;
-            padding:50px 0;
+            padding: 50px 0 10px 0 ;
             .input-group{
                 width: 20%;
                 @include reponsive("medium"){
@@ -29,6 +29,17 @@ body{
             }
             
         } 
+        .select{
+            display: flex;
+            flex-direction: row-reverse;
+            padding: 0 0 50px 0;
+            font-size:$fs-2 ;
+            #mySelect{
+                border-radius: 7px;
+                text-align: center;
+                color: $color-dark-1;
+            }
+        }
         .row{
             .main_col{
                 .card{

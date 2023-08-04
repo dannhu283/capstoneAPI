@@ -13,9 +13,23 @@ getElement("#txtSearch").onkeypress = (event) => {
     });
 };
 
+//find product by any keyword
 getElement("#basic-addon2").onclick = () => {
   let search = getElement("#txtSearch").value;
   apiGetProducts(search)
+    .then((response) => {
+      displayProduct(response.data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+//event select option phone
+getElement("#mySelect").onclick = () => {
+  let mySelect = getElement("#mySelect").value;
+
+  apiGetProducts(mySelect)
     .then((response) => {
       displayProduct(response.data);
     })

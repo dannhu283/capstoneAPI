@@ -176,7 +176,7 @@ html {
 @media screen and (max-width: 992px) {
   .index h1 {
     font-size: 60px;
-    padding-left: 20%;
+    padding-left: 10%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -251,7 +251,7 @@ body .user-second {
 body .user-second .search {
   display: flex;
   justify-content: space-between;
-  padding: 50px 0;
+  padding: 50px 0 10px 0;
 }
 body .user-second .search .input-group {
   width: 20%;
@@ -275,6 +275,17 @@ body .user-second .search .input-group #basic-addon2:hover {
 }
 body .user-second .search .input-group:hover {
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+body .user-second .select {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 0 50px 0;
+  font-size: 30px;
+}
+body .user-second .select #mySelect {
+  border-radius: 7px;
+  text-align: center;
+  color: #656774;
 }
 body .user-second .row .main_col {
   margin-bottom: 20px;
@@ -397,7 +408,7 @@ body .user-second .row .over_lay .btn-add {
 }
 .header button .quantity {
   position: absolute;
-  top: -15px;
+  top: 0;
   right: 20px;
   color: #13aa52;
   font-weight: 700;
