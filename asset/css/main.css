@@ -98,16 +98,6 @@ html {
   transform: translateY(-2px);
 }
 
-@keyframes firework {
-  0% {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-1500px) rotate(720deg);
-    opacity: 0;
-  }
-}
 .firework {
   position: absolute;
   width: 8px;
@@ -125,8 +115,46 @@ html {
   font-size: 35px;
   text-align: center;
   border-radius: 8px;
+  z-index: 4;
 }
 
+.notication {
+  display: none;
+  color: #e2ebfc;
+  background-color: rgba(26, 204, 100, 0.7607843137);
+  font-weight: 700;
+  font-size: 25px;
+  border-radius: 8px;
+  padding: 5px;
+  position: fixed;
+  top: 23%;
+  left: 37%;
+  z-index: 5;
+}
+@media screen and (max-width: 768px) {
+  .notication {
+    font-size: 1rem;
+    left: 30%;
+    top: 26%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .notication {
+    left: 30%;
+    top: 30%;
+  }
+}
+
+@keyframes firework {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1500px) rotate(720deg);
+    opacity: 0;
+  }
+}
 .index {
   background-image: url(../img/background-dien-thoai-3d_011207832.jpg);
   height: 100vh;

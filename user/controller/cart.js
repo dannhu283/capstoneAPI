@@ -49,6 +49,7 @@ function displayProduct(products) {
     return (
       result +
       `
+      
     <div class="main_col col-lg-3 col-md-4 col-sm-6" >
       <div class="card">
         <div class="imgtheme">
@@ -97,7 +98,25 @@ function addToCard(index) {
     // copy product form list to list card
     listCards[index] = JSON.parse(JSON.stringify(productsOb[index]));
     listCards[index].quantity = 1;
+    //Hidden effect shows notification when adding product successfully
+    getElement(".notication").style = "display:block";
+    setTimeout(function () {
+      getElement(".notication").style = "display:none";
+    }, 1500);
+  } else {
+    if (listCards[index]) {
+      // If the product already exists in the cart, increase the quantity and price
+      listCards[index].quantity++;
+      listCards[index].price =
+        listCards[index].quantity * productsOb[index].price;
+      //Hidden effect shows notification when adding product successfully
+      getElement(".notication").style = "display:block";
+      setTimeout(function () {
+        getElement(".notication").style = "display:none";
+      }, 1500);
+    }
   }
+
   reloadCard();
 }
 
@@ -122,11 +141,11 @@ function reloadCard() {
                   <div class="nameProduct">${value.name}</div>
                   <div class="priceProduct">${value.price}</div>
                   <div class="input">
-                      <button onclick="changeQuantity(${index}, ${
+                      <button onmousedown="changeQuantity(${index}, ${
         value.quantity - 1
       })">-</button>
                       <div class="count">${value.quantity}</div>
-                      <button onclick="changeQuantity(${index}, ${
+                      <button onmousedown="changeQuantity(${index}, ${
         value.quantity + 1
       })">+</button>
                   </div>`;
@@ -141,7 +160,7 @@ function reloadCard() {
   }
 }
 
-//function change quantity if user click add to cart
+//function change quantity if user click in list
 function changeQuantity(index, quantity) {
   if (quantity == 0) {
     delete listCards[index];

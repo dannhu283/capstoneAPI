@@ -1,13 +1,4 @@
-@keyframes firework {
-    0% {
-      transform: translateY(0) rotate(0);
-      opacity: 1;
-    }
-    100% {
-      transform: translateY(-1500px) rotate(720deg);
-      opacity: 0;
-    }
-}
+
   
 .firework {
     position: absolute;
@@ -24,4 +15,44 @@
     font-size: 35px;
     text-align: center;
     border-radius: 8px;
+    z-index: 4;
 }
+
+.notication{
+  display: none;
+  @include styleColor($color-white-2,$color-green-2);
+  font-weight: $fw-3;
+  font-size: $fs-7;
+  border-radius: 8px;
+  padding: 5px;
+  position: fixed;
+  top: 23%;
+  left: 37%;
+  z-index: 5;
+  @include reponsive("medium"){
+    font-size: $fs-1;
+    left: 30%;
+    top: 26%;
+  }
+  @include reponsive("small"){
+    left: 30%;
+    top: 30%;
+  }
+}
+
+
+//animation
+//-firework
+@keyframes firework {
+  0% {
+    transform: translateY(0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-1500px) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+
+
