@@ -19,8 +19,8 @@
             padding-top: 40px;
             font-size: $fs-6;
             @include reponsive("large"){
-                padding-top: 30px;
-                font-size: 22px;
+                padding-top: 35px;
+                font-size: $fs-2;
             }
             @include reponsive("medium"){
                  text-align: center;   
@@ -37,7 +37,7 @@
             .quantity{
                 position: absolute;
                 top:0;
-                right: 20px;
+                right: 15px;
                 color: $color-green-1;
                 font-weight: $fw-3;
             }

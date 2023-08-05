@@ -14,7 +14,7 @@ body{
                     width: 30%;
                 }
                 @include reponsive("small"){
-                    width: 35%;
+                    width: 40%;
                 }
                 #basic-addon2{
                     font-size: 25px;
@@ -40,6 +40,11 @@ body{
                 color: $color-dark-1;
             }
         }
+        .reusultFind{
+           @include colorWeight($color-green-1,$fw-3);
+           font-size: $fs-2;
+           margin-bottom: 10px;
+        }
         .row{
             .main_col{
                 .card{
@@ -47,8 +52,6 @@ body{
                    @extend .bg-img;
                    height: 100%;
                    border-radius: 15px;
-                   
-        
                 }
                 margin-bottom: 20px;
                 position: relative;
@@ -78,6 +81,7 @@ body{
                 margin:0 10px;
                 opacity: 0;
                 transition: all 0.5s;  
+                z-index: 5;
                 &:hover{
                 opacity: 1;
                 }
@@ -85,7 +89,7 @@ body{
                     transform: translateY(0px);
                 }
                 &:hover .btn-add{
-                    transform: translate(-10px,-20px)
+                    transform: translate(-10px,-20px);
                 }
                 ul{
                     list-style: none;

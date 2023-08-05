@@ -121,7 +121,7 @@ html {
 .notication {
   display: none;
   color: #e2ebfc;
-  background-color: rgba(26, 204, 100, 0.7607843137);
+  background-color: #d70018;
   font-weight: 700;
   font-size: 25px;
   border-radius: 8px;
@@ -129,7 +129,7 @@ html {
   position: fixed;
   top: 23%;
   left: 37%;
-  z-index: 5;
+  z-index: 99;
 }
 @media screen and (max-width: 768px) {
   .notication {
@@ -263,7 +263,7 @@ body .user-second .search .input-group {
 }
 @media screen and (max-width: 576px) {
   body .user-second .search .input-group {
-    width: 35%;
+    width: 40%;
   }
 }
 body .user-second .search .input-group #basic-addon2 {
@@ -286,6 +286,12 @@ body .user-second .select #mySelect {
   border-radius: 7px;
   text-align: center;
   color: #656774;
+}
+body .user-second .reusultFind {
+  color: #13aa52;
+  font-weight: 700;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 body .user-second .row .main_col {
   margin-bottom: 20px;
@@ -324,6 +330,7 @@ body .user-second .row .over_lay {
   margin: 0 10px;
   opacity: 0;
   transition: all 0.5s;
+  z-index: 5;
 }
 body .user-second .row .over_lay:hover {
   opacity: 1;
@@ -387,8 +394,8 @@ body .user-second .row .over_lay .btn-add {
 }
 @media screen and (max-width: 992px) {
   .header .nav h2 {
-    padding-top: 30px;
-    font-size: 22px;
+    padding-top: 35px;
+    font-size: 30px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -409,7 +416,7 @@ body .user-second .row .over_lay .btn-add {
 .header button .quantity {
   position: absolute;
   top: 0;
-  right: 20px;
+  right: 15px;
   color: #13aa52;
   font-weight: 700;
 }

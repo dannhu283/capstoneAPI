@@ -154,7 +154,7 @@ function reloadCard() {
       listCard.appendChild(newDiv);
     }
   });
-  total.innerText = totalPrice.toLocaleString();
+  total.innerText = totalPrice;
   quantity.innerText = count;
 
   //If there are no products in the cart, change the quantity to an empty string to display

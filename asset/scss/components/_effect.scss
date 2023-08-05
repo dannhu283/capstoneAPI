@@ -20,7 +20,7 @@
 
 .notication{
   display: none;
-  @include styleColor($color-white-2,$color-green-2);
+  @include styleColor($color-white-2,$color-red-1);
   font-weight: $fw-3;
   font-size: $fs-7;
   border-radius: 8px;
@@ -28,7 +28,7 @@
   position: fixed;
   top: 23%;
   left: 37%;
-  z-index: 5;
+  z-index: 99;
   @include reponsive("medium"){
     font-size: $fs-1;
     left: 30%;

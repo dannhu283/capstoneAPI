@@ -1,5 +1,6 @@
-// Hàm tìm kiếm sản phẩm
+// find product by any keyword
 
+//--find by Enter
 getElement("#txtSearch").onkeypress = (event) => {
   if (event.key !== "Enter") {
     return;
@@ -11,9 +12,9 @@ getElement("#txtSearch").onkeypress = (event) => {
     .catch((error) => {
       console.log(error);
     });
+  displaySearch();
 };
-
-//find product by any keyword
+//--find by onclick button
 getElement("#basic-addon2").onclick = () => {
   let search = getElement("#txtSearch").value;
   apiGetProducts(search)
@@ -23,9 +24,9 @@ getElement("#basic-addon2").onclick = () => {
     .catch((error) => {
       console.log(error);
     });
+  displaySearch();
 };
-
-//event select option phone
+//find by select
 getElement("#mySelect").onclick = () => {
   let mySelect = getElement("#mySelect").value;
 
@@ -37,3 +38,19 @@ getElement("#mySelect").onclick = () => {
       console.log(error);
     });
 };
+
+//function display notication result search
+function displaySearch() {
+  if (getElement("#txtSearch").value.length > 0) {
+    //display result search
+    getElement(".reusultFind").style = "display:block";
+    getElement(".reusultFind").innerHTML = `Kết quả tìm kiếm với : ${
+      getElement("#txtSearch").value
+    }`;
+    //reset value
+    getElement("#txtSearch").value = "";
+  } else {
+    getElement(".reusultFind").style = "display:none";
+    displayProduct();
+  }
+}
