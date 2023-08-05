@@ -296,4 +296,17 @@ footer .footer-content .footer-title span {
 }
 footer .footer-content .footer-title span:hover {
   opacity: 1;
+}
+
+.tblSanPham .table-stt {
+  width: 4%;
+}
+.tblSanPham .table-desc {
+  width: 16%;
+}
+.tblSanPham thead tr th {
+  width: 10%;
+}
+.tblSanPham tbody tr td {
+  width: 10%;
 }/*# sourceMappingURL=mainAdmin.css.map */
