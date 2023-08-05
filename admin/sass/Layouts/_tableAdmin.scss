@@ -1,0 +1,22 @@
+.tblSanPham {
+  .table-stt {
+    width: 4%;
+  }
+  .table-desc {
+    width: 16%;
+  }
+  thead {
+    tr {
+      th {
+        width: 10%;
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        width: 10%;
+      }
+    }
+  }
+}

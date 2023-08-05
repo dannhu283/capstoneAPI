@@ -38,7 +38,7 @@ function display(products) {
       result +
       `
       <tr>
-        <td>${index + 1}</td>
+        <td class="table-stt">${index + 1}</td>
         <td>${product.name}</td>
         <td>${product.price}</td>
         <td>${product.screen}</td>
@@ -52,10 +52,10 @@ function display(products) {
             alt=""
           />
         </td>
-        <td>${product.desc}</td>
+        <td class="table-desc">${product.desc}</td>
         <td>${product.type}</td>
         <td>
-          <div class="d-flex">
+          <div class="d-flex justify-content-center">
             <button 
               class="btn btn-primary"
               onclick="selectProduct(${product.id})"
@@ -65,12 +65,41 @@ function display(products) {
             <button 
               class="btn btn-danger ml-2"
               onclick="deleteProduct(${product.id})"
+              data-toggle="modal" data-target="#exampleModalDelete"
             >
               Xoá
             </button>
           </div>
         </td>
       </tr>
+
+      <!-- Modal -->
+      <div
+      class="modal fade"
+      id="exampleModalDelete"
+      role="dialog"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content p-3">
+          <div class="modal-header-delete mb-3">
+            <h5 class="modal-title" id="exampleModalLongTitle">Bạn có muốn xoá sản phẩm ${
+              product.name
+            } ?</h5>
+          </div>
+          <div class="modal-body-delete text-right"><button
+              type="button"
+              class="btn btn-danger"
+              data-dismiss="modal"
+            >
+              Huỷ
+            </button>
+            <button type="button" class="btn btn-primary" id="confirmDelete" data-dismiss="modal">Xác nhận</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
       `
     );
   }, "");
@@ -112,16 +141,19 @@ function createProduct() {
 
 // Hàm xoá product
 function deleteProduct(productId) {
-  apiDeleteProduct(productId)
-    .then(() => {
-      return apiGetProducts();
-    })
-    .then((response) => {
-      display(response.data);
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  getElement("#confirmDelete").onclick = () => {
+    apiDeleteProduct(productId)
+      .then(() => {
+        return apiGetProducts();
+      })
+      .then((response) => {
+        display(response.data);
+        $("#myModal").modal("hide");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 }
 
 // Hàm xem sản phẩm
