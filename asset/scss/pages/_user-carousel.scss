@@ -1,8 +1,7 @@
 body{
-    background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
-    @extend .bg-img;
-    height:100% ;
     .user-second{
+        background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+        @extend .bg-img;
         padding-bottom: 50px;
         .search{
             display: flex;
@@ -46,6 +45,7 @@ body{
            margin-bottom: 10px;
         }
         .row{
+            height: 100%;
             .main_col{
                 .card{
                     background-image: url(../img/images.jpg);

@@ -21,7 +21,7 @@ function getProducts() {
       displayProduct(response.data);
     })
     .catch((error) => {
-      alert("erro");
+      alert("error");
     });
 }
 
@@ -30,7 +30,7 @@ getProducts();
 const productList = [];
 // function display products on screen
 function displayProduct(products) {
-  let html = products.reduce((result, value, index) => {
+  let html = products.reduce((result, value) => {
     let product = new Product(
       value.id,
       value.name,
@@ -134,6 +134,7 @@ function reload(product) {
     return (
       result +
       `
+      
       <div class="bodyModal">
         <div class="headerModal d-flex">
             <div><img class="modal_img" src="${value.img}"/></div>
@@ -143,7 +144,7 @@ function reload(product) {
             <button class="btn-quatity" onmousedown="decrease('${
               value.id
             }')">-</button>
-            <div id="${value.id}" class="quatity px-2">${
+            <div id="${value.id}" class="quantityProduct">${
         find.quantity === undefined ? 0 : find.quantity
       }</div>
             <button class="btn-quatity" onmousedown="increase('${
@@ -256,7 +257,7 @@ function saveCart() {
       id: value.id,
       name: value.name,
       price: +value.price,
-      image: value.img,
+      img: value.img,
       quantity: value.quantity,
     };
     return cartItem;

@@ -1,5 +1,4 @@
 .modal-dialog{
-    // width: 120%;
     @include styleColor($color-green-1,$color-white-2);
     border-radius: 10px;
     border: 3px solid $color-green-1;
@@ -25,43 +24,56 @@
         font-weight: $fw-3;
     }
     .bodyModal{
-         @include colums(grid,3.5fr 1fr 1fr 1fr 0.5fr);
+         @include colums(grid,4fr 1fr 1fr 0.5fr 0.5fr);
          align-items: center;
-         justify-content: space-around;
+         justify-content: space-evenly;
          border: 2px ;
          font-size: 15px;
          margin-bottom: 20px;
-         position: relative;
          .modal_img{
             width: 50%;
-            margin-left: -40px;
+            margin-left: -60px;
+            @include reponsive("small"){
+                margin-top: 20%;
+            }
          }
          .nameProduct{
           @include colorWeight($color-green-1,$fw-3);
-          padding:10px 20px 10px 0;
-          margin-left: -50px;
-         }
-         .priceProduct{
-          @include colorWeight($color-red-1,$fw-3);
+          padding:30px 20px 30px 0;
+          margin-left: -80px;
+          @include reponsive("small"){
+            padding:30px 5px 30px 20px;
+            font-size: 13px;
+          }
          }
          .input{
             display: flex;
             button{
-                width: 20px;
-                height: 20px;
-                border-radius: 3px;
+                width: 25px;
+                height: 25px;
+                border-radius: 5px;
                 line-height: 18px;
+                font-size: $fs-7;
+                border: 1px solid white;
+                @include styleColor($color-white-2,$color-red-1);
+                &:hover{
+                    background-color: rgba(190, 21, 21, 0.918);
+                }
+            }
+            .quantityProduct{
+                padding: 0 7px;
+                @include font($fs-1,$fw-3);
             }
          }
          .modal_price{
-            font-size: $fs-7;
-            font-weight: $fw-3;
+            @include font(20px,$fw-3);
             margin-left: 20px;
+            
          }
          .remove{
             width: 50px;
             height: 50px;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid $color-red-1;
             font-weight: $fw-3;
             @include styleColor($color-white-2,$color-red-1);

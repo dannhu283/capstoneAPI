@@ -1,5 +1,6 @@
-.footer{
+footer{
     background-color: $color-blue-1;
+    height: 100%;
     .contact{
         @include colums(grid,repeat(3,1.5fr));
         @include reponsive("small"){
@@ -8,7 +9,6 @@
                 display: none;
             }
         }
-       
         &__item{
             text-align: start;
             margin-top: 30px;
@@ -52,7 +52,6 @@
     .copyright{
         @include styleColor($color-green-1,$color-white-2);
         text-align: center;
-
         padding: 10px 0;
     }
     

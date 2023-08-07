@@ -4,10 +4,18 @@
   align-items: center;
 }
 
-.bg-img, body .user-second .row .main_col .card, body, .index {
+.bg-img, body .user-second .row .main_col .card, body .user-second, .index {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+.heightvh {
+  height: 100vh;
+}
+
+.height-percent {
+  height: 100%;
 }
 
 * {
@@ -242,11 +250,8 @@ html {
   }
 }
 
-body {
-  background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
-  height: 100%;
-}
 body .user-second {
+  background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
   padding-bottom: 50px;
 }
 body .user-second .search {
@@ -293,6 +298,9 @@ body .user-second .reusultFind {
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 10px;
+}
+body .user-second .row {
+  height: 100%;
 }
 body .user-second .row .main_col {
   margin-bottom: 20px;
@@ -422,70 +430,71 @@ body .user-second .row .over_lay .btn-add {
   font-weight: 700;
 }
 
-.footer {
+footer {
   background-color: #0a0042;
+  height: 100%;
 }
-.footer .contact {
+footer .contact {
   display: grid;
   grid-template-columns: repeat(3, 1.5fr);
 }
 @media screen and (max-width: 576px) {
-  .footer .contact {
+  footer .contact {
     display: grid;
     grid-template-columns: repeat(2, 1.5fr);
   }
-  .footer .contact .item-first {
+  footer .contact .item-first {
     display: none;
   }
 }
-.footer .contact__item {
+footer .contact__item {
   text-align: start;
   margin-top: 30px;
   color: #f5f9fe;
 }
-.footer .contact__item h2 {
+footer .contact__item h2 {
   font-weight: 700;
   color: #13aa52;
 }
 @media screen and (max-width: 992px) {
-  .footer .contact__item h2 {
+  footer .contact__item h2 {
     margin-left: 30px;
   }
 }
-.footer .contact__item p {
+footer .contact__item p {
   padding: 0 50px 0 50px;
 }
 @media screen and (max-width: 768px) {
-  .footer .contact__item p {
+  footer .contact__item p {
     padding: 0 0 0 30px;
   }
 }
-.footer .contact__item ul {
+footer .contact__item ul {
   list-style: none;
 }
-.footer .contact__item ul li {
+footer .contact__item ul li {
   margin: 10px;
 }
 @media screen and (max-width: 768px) {
-  .footer .contact__item ul li {
+  footer .contact__item ul li {
     margin: 10px 5px;
   }
 }
-.footer .contact__item ul a {
+footer .contact__item ul a {
   text-decoration: none;
   font-size: 25px;
   color: #f5f9fe;
 }
-.footer .contact__item ul a:hover {
+footer .contact__item ul a:hover {
   color: #13aa52;
   transition: all 0.5s;
 }
 @media screen and (max-width: 992px) {
-  .footer .contact__item ul a {
+  footer .contact__item ul a {
     font-size: 1rem;
   }
 }
-.footer .copyright {
+footer .copyright {
   color: #13aa52;
   background-color: #e2ebfc;
   text-align: center;
@@ -523,46 +532,64 @@ body .user-second .row .over_lay .btn-add {
 }
 .modal-dialog .bodyModal {
   display: grid;
-  grid-template-columns: 3.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-columns: 4fr 1fr 1fr 0.5fr 0.5fr;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border: 2px;
   font-size: 15px;
   margin-bottom: 20px;
-  position: relative;
 }
 .modal-dialog .bodyModal .modal_img {
   width: 50%;
-  margin-left: -40px;
+  margin-left: -60px;
+}
+@media screen and (max-width: 576px) {
+  .modal-dialog .bodyModal .modal_img {
+    margin-top: 20%;
+  }
 }
 .modal-dialog .bodyModal .nameProduct {
   color: #13aa52;
   font-weight: 700;
-  padding: 10px 20px 10px 0;
-  margin-left: -50px;
+  padding: 30px 20px 30px 0;
+  margin-left: -80px;
 }
-.modal-dialog .bodyModal .priceProduct {
-  color: #d70018;
-  font-weight: 700;
+@media screen and (max-width: 576px) {
+  .modal-dialog .bodyModal .nameProduct {
+    padding: 30px 5px 30px 20px;
+    font-size: 13px;
+  }
 }
 .modal-dialog .bodyModal .input {
   display: flex;
 }
 .modal-dialog .bodyModal .input button {
-  width: 20px;
-  height: 20px;
-  border-radius: 3px;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
   line-height: 18px;
+  font-size: 25px;
+  border: 1px solid white;
+  color: #e2ebfc;
+  background-color: #d70018;
+}
+.modal-dialog .bodyModal .input button:hover {
+  background-color: rgba(190, 21, 21, 0.918);
+}
+.modal-dialog .bodyModal .input .quantityProduct {
+  padding: 0 7px;
+  font-size: 1rem;
+  font-weight: 700;
 }
 .modal-dialog .bodyModal .modal_price {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
   margin-left: 20px;
 }
 .modal-dialog .bodyModal .remove {
   width: 50px;
   height: 50px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: 1px solid #d70018;
   font-weight: 700;
   color: #e2ebfc;

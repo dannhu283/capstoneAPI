@@ -19,6 +19,11 @@
     font-weight: $weight;
 }
 
+@mixin font($size,$weight){
+    font-size: $size;
+    font-weight: $weight;
+}
+
 @mixin reponsive($screen){
     @if(map-has-key($map:$breakpoints , $key:$screen )){
         //lấy ra giá trị của screen trong mảng breakpoints
