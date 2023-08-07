@@ -27,6 +27,7 @@ function getProducts() {
 
 getProducts();
 
+const productList = [];
 // function display products on screen
 function displayProduct(products) {
   let html = products.reduce((result, value, index) => {
@@ -41,143 +42,195 @@ function displayProduct(products) {
       value.desc,
       value.type
     );
-
-    //change Json save on localStorange
-    let productsJson = JSON.stringify(products);
-    localStorage.setItem("productsJson", productsJson);
-
+    productList.push(product);
     return (
       result +
       `
-      
-    <div class="main_col col-lg-3 col-md-4 col-sm-6" >
-      <div class="card">
-        <div class="imgtheme">
-          <img src="${product.img}"/>
-          <h3>${product.name}</h3>
-          <p> ${product.price}</p>
-        </div>
         
+      <div class="main_col col-lg-3 col-md-4 col-sm-6" >
+        <div class="card">
+          <div class="imgtheme">
+            <img src="${product.img}"/>
+            <h3>${product.name}</h3>
+            <p>$${product.price}</p>
+          </div>
+          
+        </div>
+        <div class="over_lay">
+        <div class="over_infor">
+          <ul>
+            <h3>Dòng máy ${product.type} </h3>
+            <li>Camera trước : ${product.frontCamera}</li>
+            <li>Camera sau : ${product.backCamera}</li>
+            <li>${product.desc}</li>
+          </ul>
+        </div>
+        <div class="btn-add">
+          <button 
+          class="button-37 statusButton" 
+          role="button"
+          onclick="addToCart('${product.id}')">Add ➕</button>
+        </div>
       </div>
-      <div class="over_lay">
-      <div class="over_infor">
-        <ul>
-          <h3>Dòng máy ${product.type} </h3>
-          <li>Camera trước : ${product.frontCamera}</li>
-          <li>Camera sau : ${product.backCamera}</li>
-          <li>${product.desc}</li>
-        </ul>
       </div>
-      <div class="btn-add">
-        <button 
-        class="button-37 statusButton" 
-        role="button"
-        onclick="addToCard(${index})">Add ➕</button>
-      </div>
-    </div>
-    </div>
-   
-        `
+     
+          `
     );
   }, "");
+  // firstly If you don't have a product in your cart, you can't click the checkout button
+  document.getElementById("btnCapNhat").disabled = true;
   list.innerHTML = html;
 }
 
-//change back object
-let productStorangeJson = localStorage.getItem("productsJson");
-let productsOb = JSON.parse(productStorangeJson);
-
-let listCards = [];
-
-// firstly If you don't have a product in your cart, you can't click the checkout button
-document.getElementById("btnCapNhat").disabled = true;
+let cart = [];
 
 // function add product to cart when user clicked button add
-function addToCard(index) {
-  if (listCards[index] == null) {
-    // copy product form list to list card
-    listCards[index] = JSON.parse(JSON.stringify(productsOb[index]));
-    listCards[index].quantity = 1;
-    //Hidden effect shows notification when adding product successfully
-    getElement(".notication").style = "display:block";
-    setTimeout(function () {
-      getElement(".notication").style = "display:none";
-    }, 1500);
+function addToCart(itemId) {
+  const find = cart.find((value) => value.id === itemId);
+  const findProduct = productList.find((value) => value.id === itemId);
+  if (find === undefined) {
+    const cartItem = {
+      id: itemId,
+      name: findProduct.name,
+      price: findProduct.price,
+      img: findProduct.img,
+      quantity: 1,
+    };
+    //Add a new product to the cart when user clicked on the buy button add
+    cart.push(cartItem);
   } else {
-    if (listCards[index]) {
-      // If the product already exists in the cart, increase the quantity and price
-      listCards[index].quantity++;
-      listCards[index].price =
-        listCards[index].quantity * productsOb[index].price;
-      //Hidden effect shows notification when adding product successfully
-      getElement(".notication").style = "display:block";
-      setTimeout(function () {
-        getElement(".notication").style = "display:none";
-      }, 1500);
-    }
+    //If there is already a product in the cart, increase the quantity of that product by 1, not add a new one
+    find.quantity += 1;
   }
-
-  reloadCard();
+  //Hidden effect shows notification when adding product successfully
+  getElement(".notication").style = "display:block";
+  setTimeout(function () {
+    getElement(".notication").style = "display:none";
+  }, 1500);
+  // change the quantity of products in the cart
+  countQuantity(cart);
+  // Display product in cart
+  reload(cart);
   //save cart on localStorange
-  localStorage.setItem("lisCards", JSON.stringify(listCards));
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-//reload product in cart
-function reloadCard() {
-  listCard.innerHTML = "";
-  let count = 0;
-  let totalPrice = 0;
-  listCards.forEach((value, index) => {
-    count = count + value.quantity;
-    totalPrice = totalPrice + value.price * 1;
-    //If the value is greater than 0, then open the payment button
-    if (totalPrice > 0) {
-      document.getElementById("btnCapNhat").disabled = false;
-    }
-    if (value != null) {
-      getElement(".notice").style = "display:none";
-      //creat new div display products in cart
-      let newDiv = document.createElement("li");
-      newDiv.innerHTML = `
-                  <div><img width="70%" src="${value.img}"/></div>
-                  <div class="nameProduct">${value.name}</div>
-                  <div class="priceProduct">${value.price}</div>
-                  <div class="input">
-                      <button onmousedown="changeQuantity(${index}, ${
-        value.quantity - 1
-      })">-</button>
-                      <div class="count">${value.quantity}</div>
-                      <button onmousedown="changeQuantity(${index}, ${
-        value.quantity + 1
-      })">+</button>
-                  </div>`;
-      listCard.appendChild(newDiv);
-    }
-  });
-  total.innerText = totalPrice;
-  quantity.innerText = count;
-
-  //If there are no products in the cart, change the quantity to an empty string to display
-  if (count <= 0) {
-    quantity.innerText = "";
+// Count product in cart
+function countQuantity(cart) {
+  const count = cart.reduce((result, value) => {
+    return result + value.quantity;
+  }, 0);
+  quantity.innerHTML = count;
+  if (count === 0) {
+    quantity.innerHTML = "";
   }
+  //save cart on localStorange
+  localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-//function change quantity if user click in list
-function changeQuantity(index, quantity) {
-  if (quantity == 0) {
-    delete listCards[index];
-    //If there are no products in the cart,toggle the notification display and can't click the checkout button
+function reload(product) {
+  const html = product.reduce((result, value) => {
+    let find = product.find((x) => x.id === value.id) || [];
+    return (
+      result +
+      `
+      <div class="bodyModal">
+        <div class="headerModal d-flex">
+            <div><img class="modal_img" src="${value.img}"/></div>
+            <div class="nameProduct">${value.name}</div>
+        </div>
+        <div class="input">
+            <button class="btn-quatity" onmousedown="decrease('${
+              value.id
+            }')">-</button>
+            <div id="${value.id}" class="quatity px-2">${
+        find.quantity === undefined ? 0 : find.quantity
+      }</div>
+            <button class="btn-quatity" onmousedown="increase('${
+              value.id
+            }')">+</button>
+        </div>
+        <div class="modal_price">$${value.price * find.quantity}</div>
+        <button class="remove" onmousedown="removeProduct('${
+          value.id
+        }')">Xóa</button>
+      </div>
+      <hr>
+        `
+    );
+  }, "");
+  listCard.innerHTML = html;
+  if (cart.length === 0) {
+    quantity.innerHTML = "";
+    //If there are no products in the cart,toggle the notification display and can't clicked the checkout button
     document.getElementById("btnCapNhat").disabled = true;
     getElement(".notice").style = "display:block";
   } else {
-    listCards[index].quantity = quantity * 1;
-    listCards[index].price = quantity * productsOb[index].price;
+    document.getElementById("btnCapNhat").disabled = false;
+    getElement(".notice").style = "display:none";
   }
+  //recalculate the total amount every time the user changes the quantity
+  totalProduct(cart);
+}
 
-  reloadCard();
-  //save cart on localStorange
-  localStorage.setItem("lisCards", JSON.stringify(listCards));
+//When the user clicks on any change button, it changes the quantity of that product
+//-- increase Item
+function increase(id) {
+  let find = cart.find((value) => value.id === id);
+  if (find.id === id) {
+    find.quantity += 1;
+  }
+  changeQuantity(id);
+  reload(cart);
+  countQuantity(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+//--decrease Item
+function decrease(id) {
+  let find = cart.find((value) => value.id === id);
+  if (find.id === id) {
+    find.quantity -= 1;
+  }
+  changeQuantity(id);
+  deleteProduct(cart);
+  countQuantity(cart);
+  reload(cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+// Delete item If quantity equal 0
+function deleteProduct(carts) {
+  cart = cart.filter((value) => {
+    return value.quantity !== 0;
+  });
+}
+
+// function change quantity if user click button in list
+function changeQuantity(id) {
+  let find = cart.find((value) => value.id === id);
+  document.getElementById(id).innerHTML = +find.quantity;
+}
+
+// remove product from cart
+function removeProduct(id) {
+  cart = cart.filter((value) => value.id !== id);
+  countQuantity(cart);
+  reload(cart);
+  cart;
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+//total amount of all products in the cart
+function totalProduct(cart) {
+  if (cart.length === 0) {
+    total.innerHTML = 0;
+  } else {
+    sum = cart.reduce((result, value) => {
+      let find = cart.find((x) => x.id === value.id) || [];
+      return result + find.quantity * find.price;
+    }, 0);
+    total.innerHTML = sum;
+  }
 }
 
 //function pay
@@ -185,13 +238,29 @@ function pay() {
   if (confirm("Bạn có đồng ý thanh toán")) {
     // after user clicked button payment,convert data back to the original
     listCard.innerHTML = "";
-    listCards = [];
     quantity.innerHTML = "";
     total.innerHTML = 0;
     //show cart message again and  you can't click the checkout button because cart is
     getElement(".notice").style = "display:block";
     document.getElementById("btnCapNhat").disabled = true;
     //save cart on localStorange
-    localStorage.setItem("lisCards", JSON.stringify(listCards));
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
+}
+
+saveCart();
+//save cart for next visit if not already checkout
+function saveCart() {
+  cart = (JSON.parse(localStorage.getItem("cart")) || []).map((value) => {
+    const cartItem = {
+      id: value.id,
+      name: value.name,
+      price: +value.price,
+      image: value.img,
+      quantity: value.quantity,
+    };
+    return cartItem;
+  });
+  reload(cart);
+  countQuantity(cart);
 }

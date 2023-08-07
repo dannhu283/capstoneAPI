@@ -1,5 +1,5 @@
 .modal-dialog{
-    width: 120%;
+    // width: 120%;
     @include styleColor($color-green-1,$color-white-2);
     border-radius: 10px;
     border: 3px solid $color-green-1;
@@ -24,24 +24,22 @@
         color: $color-red-1;
         font-weight: $fw-3;
     }
-    .listCard{
-        li{
-         @include colums(grid,repeat(4,1.5fr));
+    .bodyModal{
+         @include colums(grid,3.5fr 1fr 1fr 1fr 0.5fr);
          align-items: center;
          justify-content: space-around;
          border: 2px ;
          font-size: 15px;
          margin-bottom: 20px;
-         &::after{
-            content: "";
-            width: 370%;
-            height: 3px;
-            border-radius: 3px;
-            border: 2px dashed $color-green-1;
-            margin-top: 20px;
+         position: relative;
+         .modal_img{
+            width: 50%;
+            margin-left: -40px;
          }
          .nameProduct{
           @include colorWeight($color-green-1,$fw-3);
+          padding:10px 20px 10px 0;
+          margin-left: -50px;
          }
          .priceProduct{
           @include colorWeight($color-red-1,$fw-3);
@@ -52,10 +50,27 @@
                 width: 20px;
                 height: 20px;
                 border-radius: 3px;
-                line-height: 20px;
-                margin: 0 8px;
+                line-height: 18px;
+            }
+         }
+         .modal_price{
+            font-size: $fs-7;
+            font-weight: $fw-3;
+            margin-left: 20px;
+         }
+         .remove{
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid $color-red-1;
+            font-weight: $fw-3;
+            @include styleColor($color-white-2,$color-red-1);
+            margin-left: 30px;
+            &:hover{
+                background-color: rgba(190, 21, 21, 0.918);
             }
          }
         }
-    }
+      
+        
 }

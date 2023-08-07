@@ -121,7 +121,8 @@ html {
 .notication {
   display: none;
   color: #e2ebfc;
-  background-color: #d70018;
+  background-color: rgba(185, 20, 125, 0.918);
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
   font-weight: 700;
   font-size: 25px;
   border-radius: 8px;
@@ -492,7 +493,6 @@ body .user-second .row .over_lay .btn-add {
 }
 
 .modal-dialog {
-  width: 120%;
   color: #13aa52;
   background-color: #e2ebfc;
   border-radius: 10px;
@@ -521,38 +521,54 @@ body .user-second .row .over_lay .btn-add {
   color: #d70018;
   font-weight: 700;
 }
-.modal-dialog .listCard li {
+.modal-dialog .bodyModal {
   display: grid;
-  grid-template-columns: repeat(4, 1.5fr);
+  grid-template-columns: 3.5fr 1fr 1fr 1fr 0.5fr;
   align-items: center;
   justify-content: space-around;
   border: 2px;
   font-size: 15px;
   margin-bottom: 20px;
+  position: relative;
 }
-.modal-dialog .listCard li::after {
-  content: "";
-  width: 370%;
-  height: 3px;
-  border-radius: 3px;
-  border: 2px dashed #13aa52;
-  margin-top: 20px;
+.modal-dialog .bodyModal .modal_img {
+  width: 50%;
+  margin-left: -40px;
 }
-.modal-dialog .listCard li .nameProduct {
+.modal-dialog .bodyModal .nameProduct {
   color: #13aa52;
   font-weight: 700;
+  padding: 10px 20px 10px 0;
+  margin-left: -50px;
 }
-.modal-dialog .listCard li .priceProduct {
+.modal-dialog .bodyModal .priceProduct {
   color: #d70018;
   font-weight: 700;
 }
-.modal-dialog .listCard li .input {
+.modal-dialog .bodyModal .input {
   display: flex;
 }
-.modal-dialog .listCard li .input button {
+.modal-dialog .bodyModal .input button {
   width: 20px;
   height: 20px;
   border-radius: 3px;
-  line-height: 20px;
-  margin: 0 8px;
+  line-height: 18px;
+}
+.modal-dialog .bodyModal .modal_price {
+  font-size: 25px;
+  font-weight: 700;
+  margin-left: 20px;
+}
+.modal-dialog .bodyModal .remove {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #d70018;
+  font-weight: 700;
+  color: #e2ebfc;
+  background-color: #d70018;
+  margin-left: 30px;
+}
+.modal-dialog .bodyModal .remove:hover {
+  background-color: rgba(190, 21, 21, 0.918);
 }/*# sourceMappingURL=main.css.map */

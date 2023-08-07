@@ -1,5 +1,13 @@
 // find product by any keyword
 
+/****   Utils  ****/
+function getElement(selector) {
+  return document.querySelector(selector);
+}
+
+function getElements(selector) {
+  return document.querySelectorAll(selector);
+}
 //--find by Enter
 getElement("#txtSearch").onkeypress = (event) => {
   if (event.key !== "Enter") {
