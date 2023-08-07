@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-.bg-img, body .user-second .row .main_col .card, body .user-second, .index {
+.bg-img, body .user-second .row .main_col .card, body, .index {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -250,26 +250,42 @@ html {
   }
 }
 
-body .user-second {
+body {
   background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+}
+body .user-first {
+  margin-top: 5px;
+  height: 100%;
+}
+body .user-first .image {
+  width: 100%;
+  background-position: center;
+  border-radius: 20px;
+}
+body .user-second {
   padding-bottom: 50px;
 }
 body .user-second .search {
   display: flex;
   justify-content: space-between;
-  padding: 50px 0 10px 0;
+  padding: 20px 0 10px 0;
 }
 body .user-second .search .input-group {
   width: 20%;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   body .user-second .search .input-group {
     width: 30%;
   }
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   body .user-second .search .input-group {
     width: 40%;
+  }
+}
+@media screen and (max-width: 576px) {
+  body .user-second .search .input-group {
+    width: 50%;
   }
 }
 body .user-second .search .input-group #basic-addon2 {
@@ -298,9 +314,6 @@ body .user-second .reusultFind {
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 10px;
-}
-body .user-second .row {
-  height: 100%;
 }
 body .user-second .row .main_col {
   margin-bottom: 20px;
@@ -431,17 +444,18 @@ body .user-second .row .over_lay .btn-add {
 }
 
 footer {
+  font-size: 20px;
   background-color: #0a0042;
   height: 100%;
 }
 footer .contact {
   display: grid;
-  grid-template-columns: repeat(3, 1.5fr);
+  grid-template-columns: 1.5fr 1.5fr 1fr;
 }
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 768px) {
   footer .contact {
     display: grid;
-    grid-template-columns: repeat(2, 1.5fr);
+    grid-template-columns: 2.5fr 1.5fr;
   }
   footer .contact .item-first {
     display: none;
@@ -482,7 +496,6 @@ footer .contact__item ul li {
 }
 footer .contact__item ul a {
   text-decoration: none;
-  font-size: 25px;
   color: #f5f9fe;
 }
 footer .contact__item ul a:hover {
@@ -499,6 +512,7 @@ footer .copyright {
   background-color: #e2ebfc;
   text-align: center;
   padding: 10px 0;
+  border-radius: 20px 20px 0 0;
 }
 
 .modal-dialog {

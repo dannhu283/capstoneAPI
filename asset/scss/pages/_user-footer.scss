@@ -1,10 +1,11 @@
 footer{
+    font-size: 20px;
     background-color: $color-blue-1;
     height: 100%;
     .contact{
-        @include colums(grid,repeat(3,1.5fr));
-        @include reponsive("small"){
-            @include colums(grid,repeat(2,1.5fr));
+        @include colums(grid,1.5fr 1.5fr 1fr);
+        @include reponsive("medium"){
+            @include colums(grid,2.5fr 1.5fr);
             .item-first{
                 display: none;
             }
@@ -19,6 +20,8 @@ footer{
                 @include reponsive("large"){
                    margin-left: 30px;
                  }  
+                 @include reponsive("medium"){
+                  } 
             }
             p{
                 padding: 0 50px 0 50px;
@@ -36,7 +39,6 @@ footer{
                 }
                 a{
                     text-decoration: none;
-                    font-size: $fs-7;
                     color:$color-white-1 ;
                     &:hover{
                         color: $color-green-1;
@@ -53,6 +55,7 @@ footer{
         @include styleColor($color-green-1,$color-white-2);
         text-align: center;
         padding: 10px 0;
+        border-radius: 20px 20px 0 0;
     }
     
 }

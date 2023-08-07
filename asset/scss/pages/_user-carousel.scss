@@ -1,20 +1,33 @@
 body{
+    background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
+    @extend .bg-img;
+    .user-first{
+        margin-top: 5px;
+        height: 100%;
+        .image{
+            width: 100%;
+            background-position: center;
+            border-radius: 20px;
+        }
+    }
     .user-second{
-        background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
-        @extend .bg-img;
         padding-bottom: 50px;
         .search{
             display: flex;
             justify-content: space-between;
-            padding: 50px 0 10px 0 ;
+            padding: 20px 0 10px 0 ;
             .input-group{
                 width: 20%;
-                @include reponsive("medium"){
+                @include reponsive("large"){
                     width: 30%;
                 }
-                @include reponsive("small"){
+                @include reponsive("medium"){
                     width: 40%;
                 }
+                @include reponsive("small"){
+                    width: 50%;
+                }
+
                 #basic-addon2{
                     font-size: 25px;
                     cursor: pointer;
@@ -45,7 +58,6 @@ body{
            margin-bottom: 10px;
         }
         .row{
-            height: 100%;
             .main_col{
                 .card{
                     background-image: url(../img/images.jpg);
