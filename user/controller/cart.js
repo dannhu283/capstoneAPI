@@ -77,8 +77,6 @@ function displayProduct(products) {
           `
     );
   }, "");
-  // firstly If you don't have a product in your cart, you can't click the checkout button
-  document.getElementById("btnCapNhat").disabled = true;
   list.innerHTML = html;
 }
 
