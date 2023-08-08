@@ -287,12 +287,10 @@ body {
   background-image: url(../img/hinh-anh-background-xanh-do-cuc-dep-1920x1067.jpg);
 }
 body .user-first {
-  margin-top: 5px;
   height: 100%;
 }
 body .user-first .carousel-inner .image {
   background-position: center;
-  border-radius: 50px;
   width: 100%;
 }
 body .user-second {
