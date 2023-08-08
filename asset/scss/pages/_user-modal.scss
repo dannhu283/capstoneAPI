@@ -77,7 +77,7 @@
             border: 1px solid $color-red-1;
             font-weight: $fw-3;
             @include styleColor($color-white-2,$color-red-1);
-            margin-left: 30px;
+            margin: 10px;
             &:hover{
                 background-color: rgba(190, 21, 21, 0.918);
             }

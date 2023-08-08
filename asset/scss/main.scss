@@ -7,8 +7,10 @@
 @import "./base/reset.scss";
 
 //components
+@import"./components/backToTop";
 @import "./components/button";
 @import"./components/effect";
+
 
 //layouts
 @import "./layouts/indexpage";

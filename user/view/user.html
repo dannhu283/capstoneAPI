@@ -45,27 +45,21 @@
     <link rel="stylesheet" href="../../asset/css/main.css" />
   </head>
   <body>
-    <header class="header">
+    <div id="popup" class="hidden">Cảm ơn bạn đã mua hàng!</div>
+    <div class="notication">🗸 Thêm vào giỏ hàng thành công</div>
+    <header class="header" id="header">
       <div class="container">
         <div class="nav">
-          <a href="./user.html"
-            ><img
-              width="50%"
+          <a href="./user.html">
+            <img
               src="../../asset/img/Screenshot 2023-07-14 220613.png"
-              alt="logo"
-          /></a>
+              alt=""
+            />
+          </a>
           <h2>Sản phẩm CyberPhone</h2>
-          <div class="buton displayTheme">
-            <button
-              class="button-64 shopping closeShopping"
-              role="button"
-              data-bs-toggle="modal"
-              data-bs-target="#myModal"
-            >
-              <span class="text">🛒</span>
-              <h3 class="quantity" id="quantity"></h3>
-            </button>
-          </div>
+          <a href="../../index.html">
+            <button class="button-37" role="button">Quay Lại</button>
+          </a>
         </div>
       </div>
     </header>
@@ -101,7 +95,7 @@
               </div>
             </div>
             <button
-              class="carousel-control-prev"
+              class="carousel-control-prev pre"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="prev"
@@ -113,7 +107,7 @@
               <span class="visually-hidden">Previous</span>
             </button>
             <button
-              class="carousel-control-next"
+              class="carousel-control-next next"
               type="button"
               data-bs-target="#carouselExampleControls"
               data-bs-slide="next"
@@ -127,18 +121,11 @@
           </div>
         </div>
       </div>
-
       <div class="user-second">
         <div class="container user">
           <div class="carousel">
             <div class="search">
-              <a href="../../index.html">
-                <button class="button-37" role="button">Quay Lại</button>
-              </a>
-              <div id="popup" class="hidden">Cảm ơn bạn đã mua hàng!</div>
-              <div class="notication">🗸 Thêm vào giỏ hàng thành công</div>
-
-              <div class="input-group mb-3">
+              <div class="input-group">
                 <input
                   type="text"
                   id="txtSearch"
@@ -147,11 +134,9 @@
                   aria-label="Recipient's username"
                   aria-describedby="basic-addon2"
                 />
-                <div class="input-group-append">
-                  <span class="input-group-text" id="basic-addon2"
-                    ><i class="fa fa-search"></i
-                  ></span>
-                </div>
+                <span class="input-group-text" id="basic-addon2"
+                  ><i class="fa fa-search"></i
+                ></span>
               </div>
             </div>
             <div class="select">
@@ -166,53 +151,7 @@
 
           <!-- product -->
           <div class="reusultFind"></div>
-          <div class="row list" id="listProduct">
-            <!-- <div class="col-4">
-                <div class="card p-5 bg-danger">
-                  <div class="imgtheme">
-                    <img
-                      width="80%"
-                      src="../../asset/img/shopping-bag6504.jpg"
-                      alt="sp"
-                    />
-                    <h3>type</h3>
-                    <p>gia</p>
-                  </div>
-                  <div class="infor d-flex">
-                    <div
-                      class="accordion accordion-flush"
-                      id="accordionFlushExample"
-                    >
-                      <div class="accordion-item">
-                        <h2 class="accordion-header" id="flush-headingOne">
-                          <button
-                            class="accordion-button collapsed"
-                            type="button"
-                            data-bs-toggle="collapse"
-                            data-bs-target="#flush-collapseOne"
-                            aria-expanded="false"
-                            aria-controls="flush-collapseOne"
-                          >
-                            name
-                          </button>
-                        </h2>
-                        <div
-                          id="flush-collapseOne"
-                          class="accordion-collapse collapse"
-                          aria-labelledby="flush-headingOne"
-                          data-bs-parent="#accordionFlushExample"
-                        >
-                          <div class="accordion-body">
-                            Screen backCamera, value.frontCamera,desc,
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <button>add to cart</button>
-                  </div>
-                </div>
-              </div> -->
-          </div>
+          <div class="row list" id="listProduct"></div>
         </div>
       </div>
     </main>
@@ -274,6 +213,25 @@
         </section>
       </div>
     </footer>
+
+    <!-- back to top -->
+    <div class="backtotop" id="backtotop">
+      <a href="#header">
+        <i class="fa fa-angle-up"></i>
+      </a>
+    </div>
+    <!--button cart -->
+    <div class="buton displayTheme">
+      <button
+        class="button-64 shopping closeShopping"
+        role="button"
+        data-bs-toggle="modal"
+        data-bs-target="#myModal"
+      >
+        <span class="text">🛒</span>
+        <h3 class="quantity" id="quantity"></h3>
+      </button>
+    </div>
   </body>
 
   <!-- modal -->
@@ -341,6 +299,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="../../admin/services/productAPI.js"></script>
   <script src="../../admin/model/products.js"></script>
+  <script src="../controller/backToTop.js"></script>
   <script src="../controller/effect.js"></script>
   <script src="../controller/cart.js"></script>
   <script src="../../user/controller/main.js"></script>

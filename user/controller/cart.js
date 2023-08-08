@@ -134,12 +134,10 @@ function reload(product) {
     return (
       result +
       `
-      
       <div class="bodyModal">
-        <div class="headerModal d-flex">
             <div><img class="modal_img" src="${value.img}"/></div>
             <div class="nameProduct">${value.name}</div>
-        </div>
+       
         <div class="input">
             <button class="btn-quatity" onmousedown="decrease('${
               value.id
@@ -233,22 +231,6 @@ function totalProduct(cart) {
     total.innerHTML = sum;
   }
 }
-
-//function pay
-function pay() {
-  if (confirm("Bạn có đồng ý thanh toán")) {
-    // after user clicked button payment,convert data back to the original
-    listCard.innerHTML = "";
-    quantity.innerHTML = "";
-    total.innerHTML = 0;
-    //show cart message again and  you can't click the checkout button because cart is
-    getElement(".notice").style = "display:block";
-    document.getElementById("btnCapNhat").disabled = true;
-    //save cart on localStorange
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
-}
-
 saveCart();
 //save cart for next visit if not already checkout
 function saveCart() {
@@ -264,4 +246,24 @@ function saveCart() {
   });
   reload(cart);
   countQuantity(cart);
+  //save cart on localStorange
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+//function pay
+function pay() {
+  if (confirm("Bạn có đồng ý thanh toán")) {
+    // after user clicked button payment,convert data back to the original
+    cart = [];
+    quantity.innerHTML = "";
+    reload(cart);
+    total.innerHTML = 0;
+    //show cart message again and  you can't click the checkout button because cart is  clean
+    getElement(".notice").style = "display:block";
+  } else {
+    //show cart message again and  you can't click the checkout button because cart is  clean
+    return reload(cart);
+  }
+  //save cart on localStorange
+  localStorage.setItem("cart", JSON.stringify(cart));
 }

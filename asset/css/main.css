@@ -30,9 +30,53 @@ html {
   color: #656774;
 }
 
+/* .backtotop */
+.backtotop {
+  position: fixed;
+  bottom: 50px;
+  left: 20px;
+  background-color: rgba(128, 128, 128, 0.521);
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+.backtotop.hidden {
+  opacity: 0;
+}
+.backtotop a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.backtotop a i {
+  color: #f5f9fe;
+  font-size: 20px;
+}
+
+.displayTheme {
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+}
+.displayTheme .closeShopping {
+  position: relative;
+}
+.displayTheme .closeShopping .quantity {
+  position: absolute;
+  top: 0;
+  right: 3px;
+  color: #13aa52;
+  font-weight: 700;
+  font-size: 24px;
+}
+
 .button-64 {
   align-items: center;
-  background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+  background-image: linear-gradient(144deg, #AF40FF, #6753e6 50%, #00DDEB);
   border: 0;
   border-radius: 8px;
   box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
@@ -40,17 +84,16 @@ html {
   color: #FFFFFF;
   display: flex;
   font-family: Phantomsans, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   justify-content: center;
   line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
   text-decoration: none;
   -moz-user-select: none;
        user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  z-index: 999;
   cursor: pointer;
 }
 .button-64:active {
@@ -61,12 +104,12 @@ html {
 }
 .button-64 span {
   background-color: #0a0042;
-  padding: 20px 24px;
+  padding: 20px 20px 20px 5px;
   border-radius: 6px;
   width: 100%;
   height: 100%;
   transition: 300ms;
-  font-size: 44px;
+  font-size: 30px;
 }
 @media screen and (max-width: 992px) {
   .button-64 span {
@@ -107,7 +150,7 @@ html {
 }
 
 .firework {
-  position: absolute;
+  position: fixed;
   width: 8px;
   height: 15px;
   border-radius: 25%;
@@ -116,17 +159,10 @@ html {
   animation: firework 2s forwards;
 }
 
-.hidden {
-  display: none;
-  color: rgb(219, 77, 96);
-  font-weight: 700;
-  font-size: 35px;
-  text-align: center;
-  border-radius: 8px;
-  z-index: 4;
-}
-
-.notication {
+.notication, .hidden {
+  position: fixed;
+  top: 23%;
+  left: 37%;
   display: none;
   color: #e2ebfc;
   background-color: rgba(185, 20, 125, 0.918);
@@ -135,20 +171,17 @@ html {
   font-size: 25px;
   border-radius: 8px;
   padding: 5px;
-  position: fixed;
-  top: 23%;
-  left: 37%;
   z-index: 99;
 }
 @media screen and (max-width: 768px) {
-  .notication {
+  .notication, .hidden {
     font-size: 1rem;
     left: 30%;
     top: 26%;
   }
 }
 @media screen and (max-width: 576px) {
-  .notication {
+  .notication, .hidden {
     left: 30%;
     top: 30%;
   }
@@ -257,54 +290,41 @@ body .user-first {
   margin-top: 5px;
   height: 100%;
 }
-body .user-first .image {
-  width: 100%;
+body .user-first .carousel-inner .image {
   background-position: center;
-  border-radius: 20px;
+  border-radius: 50px;
+  width: 100%;
 }
 body .user-second {
   padding-bottom: 50px;
 }
-body .user-second .search {
+body .user-second .carousel {
   display: flex;
   justify-content: space-between;
-  padding: 20px 0 10px 0;
+  margin: 20px 0;
 }
-body .user-second .search .input-group {
-  width: 20%;
+body .user-second .carousel .search {
+  width: 100%;
 }
-@media screen and (max-width: 992px) {
-  body .user-second .search .input-group {
-    width: 30%;
-  }
+body .user-second .carousel .search .input-group {
+  width: 250px;
 }
-@media screen and (max-width: 768px) {
-  body .user-second .search .input-group {
-    width: 40%;
-  }
-}
-@media screen and (max-width: 576px) {
-  body .user-second .search .input-group {
-    width: 50%;
-  }
-}
-body .user-second .search .input-group #basic-addon2 {
-  font-size: 25px;
+body .user-second .carousel .search .input-group #basic-addon2 {
+  font-size: 30px;
   cursor: pointer;
 }
-body .user-second .search .input-group #basic-addon2:hover {
+body .user-second .carousel .search .input-group #basic-addon2:hover {
   box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-body .user-second .search .input-group:hover {
+body .user-second .carousel .search .input-group:hover {
   box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
 }
-body .user-second .select {
-  display: flex;
+body .user-second .carousel .select {
   flex-direction: row-reverse;
-  padding: 0 0 50px 0;
   font-size: 30px;
+  margin-bottom: 10px;
 }
-body .user-second .select #mySelect {
+body .user-second .carousel .select #mySelect {
   border-radius: 7px;
   text-align: center;
   color: #656774;
@@ -391,28 +411,29 @@ body .user-second .row .over_lay .btn-add {
   background-color: #0a0042;
 }
 .header .nav {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 2fr 1fr;
 }
-@media screen and (max-width: 992px) {
-  .header .nav img {
-    width: 60%;
-  }
+.header .nav img {
+  width: 80%;
 }
 @media screen and (max-width: 768px) {
   .header .nav img {
-    width: 80%;
+    width: 100%;
+    margin-top: 10px;
   }
 }
 @media screen and (max-width: 576px) {
   .header .nav img {
-    width: 80%;
-    padding-top: 10px;
+    width: 120%;
+    margin-top: 10px;
   }
 }
 .header .nav h2 {
-  padding-top: 40px;
-  font-size: 37px;
+  padding-top: 50px;
+  font-size: 44px;
+  text-align: center;
 }
 @media screen and (max-width: 992px) {
   .header .nav h2 {
@@ -422,25 +443,14 @@ body .user-second .row .over_lay .btn-add {
 }
 @media screen and (max-width: 768px) {
   .header .nav h2 {
-    text-align: center;
     padding-top: 25px;
     font-size: 30px;
   }
 }
-@media screen and (max-width: 576px) {
-  .header .nav h2 {
-    font-size: 25px;
-  }
-}
-.header button {
-  position: relative;
-}
-.header button .quantity {
+.header .nav .button-37 {
   position: absolute;
-  top: 0;
-  right: 15px;
-  color: #13aa52;
-  font-weight: 700;
+  right: 3%;
+  top: 40%;
 }
 
 footer {
@@ -608,7 +618,7 @@ footer .copyright {
   font-weight: 700;
   color: #e2ebfc;
   background-color: #d70018;
-  margin-left: 30px;
+  margin: 10px;
 }
 .modal-dialog .bodyModal .remove:hover {
   background-color: rgba(190, 21, 21, 0.918);

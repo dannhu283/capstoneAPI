@@ -1,7 +1,7 @@
 
   
 .firework {
-    position: absolute;
+    position: fixed;
     width: 8px;
     height: 15px;
     border-radius: 25%;
@@ -9,16 +9,11 @@
     border-radius: 50%;
     animation: firework 2s forwards;
 }
-.hidden{
-    display: none;
-    @include colorWeight(rgb(219, 77, 96),$fw-3);
-    font-size: 35px;
-    text-align: center;
-    border-radius: 8px;
-    z-index: 4;
-}
 
-.notication{
+.notication,.hidden{
+  position: fixed;
+  top: 23%;
+  left: 37%;
   display: none;
   @include styleColor($color-white-2,rgba(185, 20, 125, 0.918));
   box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
@@ -26,9 +21,6 @@
   font-size: $fs-7;
   border-radius: 8px;
   padding: 5px;
-  position: fixed;
-  top: 23%;
-  left: 37%;
   z-index: 99;
   @include reponsive("medium"){
     font-size: $fs-1;

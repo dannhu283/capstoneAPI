@@ -2,45 +2,37 @@
 .header{
     @include styleColor($color-green-1,$color-blue-1);
     .nav{
-        @include colums(grid,repeat(3,1fr));
+        position: relative;
+        @include colums(grid,1fr 2fr 1fr);
         img{
-            @include reponsive("large"){
-              width: 60%;  
-            }
+            width: 80%; 
             @include reponsive("medium"){
-                  width: 80%;  
+                  width:100%;  
+                  margin-top: 10px;
             }
             @include reponsive("small"){
-                    width: 80%;
-                    padding-top: 10px;
+                    width: 120%;
+                    margin-top: 10px;
             }
         }
         h2{
-            padding-top: 40px;
-            font-size: $fs-6;
+            padding-top: 50px;
+            font-size: $fs-3;
+            text-align: center;
             @include reponsive("large"){
                 padding-top: 35px;
                 font-size: $fs-2;
             }
             @include reponsive("medium"){
-                 text-align: center;   
                  padding-top: 25px;
                  font-size: 30px;
             }
-            @include reponsive("small"){
-                font-size: 25px;
-            }
         }
-        }
-        button{
-            position: relative;
-            .quantity{
-                position: absolute;
-                top:0;
-                right: 15px;
-                color: $color-green-1;
-                font-weight: $fw-3;
-            }
+        .button-37{
+            position: absolute;
+            right: 3%;
+            top: 40%;
         }
     }
+}
 

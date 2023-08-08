@@ -4,54 +4,48 @@ body{
     .user-first{
         margin-top: 5px;
         height: 100%;
-        .image{
-            width: 100%;
-            background-position: center;
-            border-radius: 20px;
+        .carousel-inner{
+            .image{
+                background-position: center;
+                border-radius: 50px;
+                width: 100%;
+            }
         }
-    }
+        }
     .user-second{
         padding-bottom: 50px;
-        .search{
+        .carousel{
             display: flex;
             justify-content: space-between;
-            padding: 20px 0 10px 0 ;
-            .input-group{
-                width: 20%;
-                @include reponsive("large"){
-                    width: 30%;
-                }
-                @include reponsive("medium"){
-                    width: 40%;
-                }
-                @include reponsive("small"){
-                    width: 50%;
-                }
-
-                #basic-addon2{
-                    font-size: 25px;
-                    cursor: pointer;
+            margin: 20px 0;
+            .search{
+                width: 100%;
+                .input-group{
+                    width:250px;
+                    #basic-addon2{
+                        font-size:$fs-2;
+                        cursor: pointer;
+                        &:hover{
+                            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                        }
+                    }
                     &:hover{
-                        box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+                        box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
                     }
                 }
-                &:hover{
-                    box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px, rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+            } 
+            .select{
+                flex-direction: row-reverse;
+                font-size:$fs-2 ;
+                margin-bottom: 10px;
+                #mySelect{
+                    border-radius: 7px;
+                    text-align: center;
+                    color: $color-dark-1;
                 }
             }
-            
-        } 
-        .select{
-            display: flex;
-            flex-direction: row-reverse;
-            padding: 0 0 50px 0;
-            font-size:$fs-2 ;
-            #mySelect{
-                border-radius: 7px;
-                text-align: center;
-                color: $color-dark-1;
-            }
         }
+ 
         .reusultFind{
            @include colorWeight($color-green-1,$fw-3);
            font-size: $fs-2;
