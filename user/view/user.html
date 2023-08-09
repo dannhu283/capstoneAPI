@@ -227,7 +227,7 @@
     </div>
   </body>
 
-  <!-- modal -->
+  <!-- modal cart-->
   <div class="modal fade" id="myModal">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -237,13 +237,6 @@
           <div class="listCard"></div>
           <div class="money">Tổng tiền :$<span class="total">0</span></div>
         </header>
-
-        <!-- Modal Header -->
-        <!-- 	<div class="modal-header">
-  <h4 class="modal-title" id="modal-title">Modal Heading</h4>
-  <button type="button" class="close" data-dismiss="modal">&times;</button>
-</div> -->
-
         <!-- Modal body -->
         <div class="modal-body"></div>
 
@@ -252,25 +245,57 @@
           <button
             id="btnCapNhat"
             type="button"
-            class="btn btn-success"
-            data-bs-target="#myModal"
+            class="btn btn-success check"
             class="btn-close closeShopping"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-            onclick="pay()"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
           >
             Thanh toán
           </button>
           <button
             id="btnDong"
             type="button"
-            class="btn btn-danger"
+            class="btn btn-danger check"
             data-bs-target="#myModal"
             class="btn-close closeShopping"
             data-bs-dismiss="modal"
             aria-label="Close"
           >
             Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- modal confirm pay -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body" id="body-confirm">Bạn có đồng ý thanh toán</div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-danger check"
+            data-bs-toggle="modal"
+            data-bs-target="#myModal"
+          >
+            Kiểm tra
+          </button>
+          <button
+            type="button"
+            class="button-37"
+            data-bs-dismiss="modal"
+            id="confirm"
+            onclick="pay()"
+          >
+            Xác nhận
           </button>
         </div>
       </div>

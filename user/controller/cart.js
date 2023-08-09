@@ -250,18 +250,14 @@ function saveCart() {
 
 //function pay
 function pay() {
-  if (confirm("Bạn có đồng ý thanh toán")) {
-    // after user clicked button payment,convert data back to the original
-    cart = [];
-    quantity.innerHTML = "";
-    reload(cart);
-    total.innerHTML = 0;
-    //show cart message again and  you can't click the checkout button because cart is  clean
-    getElement(".notice").style = "display:block";
-  } else {
-    //show cart message again and  you can't click the checkout button because cart is  clean
-    return reload(cart);
-  }
+  // after user clicked button payment,convert data back to the original
+  cart = [];
+  quantity.innerHTML = "";
+  reload(cart);
+  total.innerHTML = 0;
+  //show cart message again and  you can't click the checkout button because cart is  clean
+  getElement(".notice").style = "display:block";
+
   //save cart on localStorange
   localStorage.setItem("cart", JSON.stringify(cart));
 }

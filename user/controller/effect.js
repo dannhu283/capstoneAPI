@@ -10,7 +10,7 @@ function createFirework(x, y) {
   });
 }
 
-document.getElementById("btnCapNhat").addEventListener("click", () => {
+document.getElementById("confirm").addEventListener("click", () => {
   // create fireworks effect when user click btn pay
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
