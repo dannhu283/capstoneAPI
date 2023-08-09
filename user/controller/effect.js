@@ -15,7 +15,7 @@ document.getElementById("confirm").addEventListener("click", () => {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 500; i++) {
     const x = Math.random() * screenWidth;
     const y = Math.random() * screenHeight;
     createFirework(x, y);

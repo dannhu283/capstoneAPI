@@ -449,8 +449,13 @@ body .user-second .row .over_lay .btn-add {
 }
 @media screen and (max-width: 768px) {
   .header .nav h2 {
-    padding-top: 25px;
     font-size: 30px;
+    padding-top: 55px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .header .nav h2 {
+    padding-top: 20px;
   }
 }
 .header .nav .button-37 {
