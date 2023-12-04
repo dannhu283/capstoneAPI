@@ -407,6 +407,7 @@ body .user-second .row .over_lay .btn-add {
 .header {
   color: #13aa52;
   background-color: #0a0042;
+  height: 10%;
 }
 .header .nav {
   position: relative;

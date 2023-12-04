@@ -1,6 +1,7 @@
 
 .header{
     @include styleColor($color-green-1,$color-blue-1);
+    height: 10%;
     .nav{
         position: relative;
         @include colums(grid,1fr 2fr 1fr);

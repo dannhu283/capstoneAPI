@@ -77,8 +77,6 @@ function displayProduct(products) {
           `
     );
   }, "");
-  // firstly If you don't have a product in your cart, you can't click the checkout button
-  document.getElementById("btnCapNhat").disabled = true;
   list.innerHTML = html;
 }
 
@@ -252,7 +250,7 @@ function saveCart() {
 
 //function pay
 function pay() {
-  if (confirm("Bạn có đồng ý thanh toán")) {
+  if (confirm("Bạn có đồng ý thanh toán") == true) {
     // after user clicked button payment,convert data back to the original
     cart = [];
     quantity.innerHTML = "";
@@ -261,7 +259,6 @@ function pay() {
     //show cart message again and  you can't click the checkout button because cart is  clean
     getElement(".notice").style = "display:block";
   } else {
-    //show cart message again and  you can't click the checkout button because cart is  clean
     return reload(cart);
   }
   //save cart on localStorange
