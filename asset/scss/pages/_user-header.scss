@@ -25,8 +25,11 @@
                 font-size: $fs-2;
             }
             @include reponsive("medium"){
-                 padding-top: 25px;
                  font-size: 30px;
+                 padding-top: 55px;
+            }
+            @include reponsive("small"){
+                padding-top: 20px;
             }
         }
         .button-37{

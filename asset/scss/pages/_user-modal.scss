@@ -23,6 +23,10 @@
         color: $color-red-1;
         font-weight: $fw-3;
     }
+    #body-confirm{
+        @include colorWeight($color-red-1,$fw-3);
+        font-size: $fs-7;
+    }
     .bodyModal{
          @include colums(grid,4fr 1fr 1fr 0.5fr 0.5fr);
          align-items: center;
@@ -82,7 +86,5 @@
                 background-color: rgba(190, 21, 21, 0.918);
             }
          }
-        }
-      
-        
+        } 
 }

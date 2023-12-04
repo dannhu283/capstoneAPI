@@ -10,12 +10,12 @@ function createFirework(x, y) {
   });
 }
 
-document.getElementById("btnCapNhat").addEventListener("click", () => {
+document.getElementById("confirm").addEventListener("click", () => {
   // create fireworks effect when user click btn pay
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
 
-  for (let i = 0; i < 200; i++) {
+  for (let i = 0; i < 500; i++) {
     const x = Math.random() * screenWidth;
     const y = Math.random() * screenHeight;
     createFirework(x, y);

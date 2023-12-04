@@ -33,6 +33,7 @@ getElement("#mySelect").onclick = () => {
   apiGetProducts(mySelect)
     .then((response) => {
       displayProduct(response.data);
+      getElement(".reusultFind").style = "display:none";
     })
     .catch((error) => {
       console.log(error);
